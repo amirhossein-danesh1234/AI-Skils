@@ -1,42 +1,24 @@
 # Financial Risk Analysis
 
+Context: [Financial Analyst](README.md).
+
 ## Purpose
 
 Assess financial loss and liquidity exposure from uncertain events.
 
-## When to Use
+## Activate When
 
 A business faces material cash, credit, currency, concentration, or financing risk.
 
-## When Not to Use
+## Do Not Use When
 
 Do not recommend complex hedges or regulated products without qualified advice.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Exposure amounts/timing, counterparties, currencies, obligations, and loss limits.
 
-Exposure inventory, balances, timing, currencies, counterparties, obligations, and risk limits.
-
-### Helpful
-
-Decision scope, actual financial records, currency, period, accounting basis, business drivers, and financing constraints.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Risk assessment with scenarios, exposure amounts, triggers, controls, residual risk, and approval needs.
-
-## Operating Principles
-
-Keep historical data, forecast, assumption, scenario, and sensitivity distinct. Show units, timing, denominators, and downside exposure.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Complex hedges and regulated advice require qualified review; simple exposure analysis can proceed.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Stress correlated failures and inspect the timing of cash shortfalls.
 4. Compare limits, reserves, term changes, diversification, or professional risk-transfer options.
 
+## Liquidity Stress
+
+Stress related exposures together: delayed collections can coincide with FX moves and supplier prepayment. Show gross exposure, offsets with their enforceability, and first shortfall timing. A proposed reserve or credit line is not active protection unless available when needed.
+
 ## Decision Rules
 
 - If a plausible event prevents essential payments, prioritize liquidity action over cosmetic profitability improvement.
 - If a mitigation creates new leverage or obligations, require qualified review.
 
-## Validation
+## Output Contract
+
+Risk assessment with scenarios, exposure amounts, triggers, controls, residual risk, and approval needs.
+
+## Quality Gates
 
 - Are gross and net exposures distinguished and assumptions documented?
 - Can controls be executed within the required time and authority?
+- Mitigations can operate before the loss or essential-payment failure occurs.
 
-## Common Failure Modes
+## Failure Modes
 
 - Risk measured only by volatility: include permanent loss and liquidity.
 - Diversification assumed independent: test correlated counterparties.
 
-## Escalation and Collaboration
+## Handoffs
 
 Commercial specialist supplies deal terms; accountant/legal adviser confirms obligations; executive owner accepts material exposure.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

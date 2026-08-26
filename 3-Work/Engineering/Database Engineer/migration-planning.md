@@ -1,42 +1,24 @@
 # Migration Planning
 
+Context: [Database Engineer](README.md).
+
 ## Purpose
 
 Change persisted structure or data without losing correctness or recoverability.
 
-## When to Use
+## Activate When
 
 A schema or data transformation must run against existing records.
 
-## When Not to Use
+## Do Not Use When
 
 Do not treat successful migration syntax as proof of safe production execution.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Current/target state, data volume, mixed-version behavior, and permitted impact.
 
-Current and target schema, engine/version, data volume, application versions, downtime allowance, and backup/restore evidence.
-
-### Helpful
-
-Database engine/version, schema, constraints, workload evidence, volumes, retention needs, and recovery objectives.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Migration plan with expand/backfill/validate/contract stages, compatibility, lock budget, checkpoints, and recovery.
-
-## Operating Principles
-
-Design from invariants and access patterns; verify query semantics separately from speed and migration safety separately from syntax.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Preliminary design can list missing restore evidence; destructive execution cannot proceed on that omission.
 
 ## Workflow
 
@@ -55,27 +37,30 @@ Validate business totals and relationships as well as technical row counts. If d
 
 Separate application rollback, schema rollback, data restoration, and forward repair. State which are possible at each stage and whether they lose new writes. A restore plan needs actual restore evidence and acceptable recovery time; a backup filename alone is insufficient. If the only safe response to a failed destructive stage requires unavailable authority or recovery capability, do not start that stage.
 
+## Cutover Reconciliation
+
+Specify how writes during backfill reach the target representation and how divergence is detected. Separate restartable backfill checkpoints from application cutover. Test an old reader, old writer, new reader, and new writer at the intended coexistence stage, including rollback limitations.
+
 ## Decision Rules
 
 - If a change is irreversible, require explicit approval and a tested restore or forward-repair path.
 - If old and new code coexist, delay destructive cleanup until old readers and writers are gone.
 
-## Validation
+## Output Contract
+
+Migration plan with expand/backfill/validate/contract stages, compatibility, lock budget, checkpoints, and recovery.
+
+## Quality Gates
 
 - Do row counts, checksums or domain reconciliations prove the transformation?
 - Are rollback limitations and recovery time explicit?
+- Destructive cleanup waits until all relevant readers/writers and rollback versions no longer require the old representation.
 
-## Common Failure Modes
+## Failure Modes
 
 - Drop-first migration breaks old code: expand before contract.
 - Backup existence mistaken for recoverability: rehearse restore.
 
-## Escalation and Collaboration
+## Handoffs
 
 Backend Engineer validates compatibility; DevOps owns execution; Security reviews retention and sensitive transformations.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

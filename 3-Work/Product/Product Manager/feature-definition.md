@@ -1,42 +1,24 @@
 # Feature Definition
 
+Context: [Product Manager](README.md).
+
 ## Purpose
 
 Define a bounded product capability justified by an accepted problem.
 
-## When to Use
+## Activate When
 
 A solution path is selected and the team needs to agree what capability is intended.
 
-## When Not to Use
+## Do Not Use When
 
-Use problem-definition.md for unclear needs and prd-writing.md for a detailed delivery specification.
+Use [problem-definition.md](problem-definition.md) for unclear needs and [prd-writing.md](prd-writing.md) for a detailed delivery specification.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Accepted problem, affected user, desired outcome, and constraints.
 
-Accepted problem, target users, desired outcome, alternatives considered, constraints, and business rules.
-
-### Helpful
-
-User segment and scenario, evidence, business objective, constraints, current behavior, relevant policies, and decision owner.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Feature brief with scenarios, scope, exclusions, states, dependencies, success signals, and open decisions.
-
-## Operating Principles
-
-Maintain traceability from problem to scope to acceptance. Reject weak requests with reasons and a better alternative; distinguish useful outcomes from shipped output.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** A complete PRD is not required for a brief; consequential permission, money, and lifecycle questions must be flagged.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Map normal, empty, error, permission, and recovery states at capability level.
 4. Identify integrations and policy decisions; compare the benefit with maintenance and operational burden.
 
+## Smallest Coherent Capability
+
+Define who starts the capability, the authoritative state it changes, and what demonstrates success. List included and excluded scenarios rather than broad feature nouns. Compare a manual workaround or extension of existing behavior with a new feature before choosing the delivery slice.
+
 ## Decision Rules
 
 - If the capability requires unresolved policy, mark the decision owner and block only the affected scope.
 - If an existing capability can be adjusted, prefer reuse unless it creates greater complexity.
 
-## Validation
+## Output Contract
+
+Feature brief with scenarios, scope, exclusions, states, dependencies, success signals, and open decisions.
+
+## Quality Gates
 
 - Can the feature be explained without prescribing implementation?
 - Are exclusions and failure behavior sufficient to prevent scope ambiguity?
+- The brief includes failure/recovery and prevents two incompatible interpretations of scope.
 
-## Common Failure Modes
+## Failure Modes
 
 - Feature list without outcome: anchor to a scenario.
 - Happy path only: include recovery and permission states.
 
-## Escalation and Collaboration
+## Handoffs
 
 UX Designer owns interaction detail; Architect checks structural impact; Product Analyst defines measurement.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

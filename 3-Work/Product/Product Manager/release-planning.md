@@ -1,42 +1,24 @@
 # Release Planning
 
+Context: [Product Manager](README.md).
+
 ## Purpose
 
 Define a bounded product release, readiness conditions, and learning plan.
 
-## When to Use
+## Activate When
 
 A product increment is approaching users or needs phased exposure.
 
-## When Not to Use
+## Do Not Use When
 
 DevOps owns deployment mechanics; Project Manager owns schedule coordination; QA owns test evidence.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Candidate scope, intended audience, acceptance, and material exposure.
 
-Release scope, acceptance, target audience, dependencies, risk, support readiness, and measurement.
-
-### Helpful
-
-User segment and scenario, evidence, business objective, constraints, current behavior, relevant policies, and decision owner.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Release brief with audience, scope, gates, communication, rollout intent, monitoring, and stop conditions.
-
-## Operating Principles
-
-Maintain traceability from problem to scope to acceptance. Reject weak requests with reasons and a better alternative; distinguish useful outcomes from shipped output.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Exact communications can follow a release-intent draft; readiness evidence and an authorized release owner are needed before exposure.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Define readiness gates and phased exposure proportional to harm and reversibility.
 4. Align owners for observation, rollback decisions, customer communication, and outcome review.
 
+## Launch Versus Deploy
+
+Name which audiences can access which behavior and how activation is controlled. For each gate, record evidence owner, observation window, stop trigger, and who may promote or pause. Include customer/support promises and a scheduled outcome review; code rollback alone may not reverse customer commitments.
+
 ## Decision Rules
 
 - If essential support, measurement, or safety readiness is missing, hold affected exposure.
 - If risk is uncertain but bounded, use a limited pilot with explicit stop criteria.
 
-## Validation
+## Output Contract
+
+Release brief with audience, scope, gates, communication, rollout intent, monitoring, and stop conditions.
+
+## Quality Gates
 
 - Are every gate and stop condition observable and owned?
 - Do release claims match actual enabled capabilities?
+- A pilot has a bounded audience and a real owner able to stop exposure.
 
-## Common Failure Modes
+## Failure Modes
 
 - Deploy equals launch: separate operations from product exposure.
 - No post-launch owner: assign monitoring and review responsibility.
 
-## Escalation and Collaboration
+## Handoffs
 
 DevOps plans safe rollout; QA reports confidence; Marketing and Sales align truthful communication.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

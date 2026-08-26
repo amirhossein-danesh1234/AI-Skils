@@ -1,42 +1,24 @@
 # Incident Analysis
 
+Context: [DevOps-Infrastructure Engineer](README.md).
+
 ## Purpose
 
 Explain an incident’s contributing conditions and select effective prevention and recovery improvements.
 
-## When to Use
+## Activate When
 
 An incident is stabilized and needs learning or a recurring failure needs investigation.
 
-## When Not to Use
+## Do Not Use When
 
-During active harm, prioritize authorized containment and recovery before retrospective analysis.
+Use [incident-response.md](incident-response.md) for active harm and authorized containment; retrospective causal analysis follows stabilization.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Stabilized incident timeline, impact, evidence, actions, and uncertainties.
 
-Timeline, symptoms, logs, changes, actions, impact, and known evidence gaps.
-
-### Helpful
-
-Actual infrastructure and listeners, release process, identities, dependencies, service objectives, secrets handling, and current incident state.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Incident account with impact, timeline, causal factors, response assessment, actions, and uncertainty.
-
-## Operating Principles
-
-Inspect before mutation; use immutable or traceable releases, least privilege, explicit stop conditions, and real service checks.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Causality may remain unresolved; useful improvement proposals can target demonstrated detection or recovery gaps.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Test alternative explanations and identify where safeguards failed or were absent.
 4. Choose actions that change system behavior or response, with owners and verification.
 
+## Causal Counterfactual
+
+For each contributing factor, ask whether changing it would have prevented or reduced the observed impact. Separate trigger, latent condition, detection delay, and recovery delay. Choose a few actions with verification, not a long list of generic hardening or a requirement for someone to be more careful.
+
 ## Decision Rules
 
 - If evidence cannot establish a cause, report hypotheses and discriminating follow-up rather than certainty.
 - If an action is only “be careful,” replace it with a concrete control or observable practice.
 
-## Validation
+## Output Contract
+
+Incident account with impact, timeline, causal factors, response assessment, actions, and uncertainty.
+
+## Quality Gates
 
 - Does the explanation account for the observed sequence and impact?
 - Are actions proportionate, owned, and testable?
+- Every corrective action interrupts a demonstrated causal or response mechanism.
 
-## Common Failure Modes
+## Failure Modes
 
 - Blame replaces causal analysis: inspect conditions and incentives.
 - Single root cause hides interacting failures: preserve multiple contributors.
 
-## Escalation and Collaboration
+## Handoffs
 
 Service engineers validate mechanisms; Security leads suspected compromise; Operations and management resolve systemic constraints.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

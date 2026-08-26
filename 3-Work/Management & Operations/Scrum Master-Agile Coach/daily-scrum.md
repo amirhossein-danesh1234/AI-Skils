@@ -1,42 +1,24 @@
 # Daily Scrum
 
+Context: [Scrum Master-Agile Coach](README.md).
+
 ## Purpose
 
 Help Developers inspect progress toward the Sprint Goal and adapt their plan.
 
-## When to Use
+## Activate When
 
 A Scrum team needs its daily coordination event.
 
-## When Not to Use
+## Do Not Use When
 
 Do not turn the event into manager status reporting or force a fixed three-question script.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Sprint Goal, current work, and relevant blockers for a team using Scrum.
 
-Sprint Goal, current work, blockers, and relevant progress evidence.
-
-### Helpful
-
-Team working agreements, goals, backlog readiness, capacity, delivery observations, and impediment evidence.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-An adapted near-term plan and identified follow-up conversations or impediments.
-
-## Operating Principles
-
-Use Scrum commitments when the team actually uses Scrum; otherwise adapt flow practices openly. Do not present a hybrid process as strict Scrum.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Use a different coordination format openly if the team is not using Scrum.
 
 ## Workflow
 
@@ -45,27 +27,34 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Let Developers decide adjustments and immediate collaboration.
 4. Move detailed problem solving to focused follow-up without losing ownership.
 
+## Adaptation Focus
+
+Inspect whether current work threatens the Sprint Goal and decide the next collaboration or plan adjustment. In Scrum, the Daily Scrum is a 15-minute event for Developers; move detailed investigation to focused follow-up. Do not use the event to assign individual performance ratings or demand a fixed question script.
+
 ## Decision Rules
 
 - If discussion does not change coordination or expose risk, simplify the format.
 - If an impediment exceeds team authority, assign escalation outside the event.
 
-## Validation
+## Output Contract
+
+An adapted near-term plan and identified follow-up conversations or impediments.
+
+## Quality Gates
 
 - Do participants know the next coordination actions?
 - Is the event useful to Developers rather than a reporting audience?
+- The event produces useful coordination rather than a manager-facing activity recital.
 
-## Common Failure Modes
+## Failure Modes
 
 - Round-robin activity recital: discuss goal risk.
 - Long debugging session consumes everyone: split follow-up.
 
-## Escalation and Collaboration
+## Handoffs
 
-Impediment-analysis.md handles blockers; Project Manager receives relevant commitment changes separately.
+[Impediment-analysis.md](impediment-analysis.md) handles blockers; Project Manager receives relevant commitment changes separately.
 
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
+## References
 
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.
+[The official Scrum Guide](https://scrumguides.org/scrum-guide.html) defines the Daily Scrum when Scrum is the chosen method.

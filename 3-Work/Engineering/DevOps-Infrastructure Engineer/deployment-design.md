@@ -1,42 +1,24 @@
 # Deployment Design
 
+Context: [DevOps-Infrastructure Engineer](README.md).
+
 ## Purpose
 
 Design a release path with bounded exposure, observability, and recovery.
 
-## When to Use
+## Activate When
 
 A service needs a deployment method or a risky change needs rollout planning.
 
-## When Not to Use
+## Do Not Use When
 
 Do not deploy merely because the design is complete; execution needs task authority.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Target topology, artifact, compatibility, impact limits, and recovery capability.
 
-Topology, artifact, compatibility, traffic, state changes, objectives, and operational access.
-
-### Helpful
-
-Actual infrastructure and listeners, release process, identities, dependencies, service objectives, secrets handling, and current incident state.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Deployment plan with stages, gates, health signals, ownership, stop rules, and rollback or forward recovery.
-
-## Operating Principles
-
-Inspect before mutation; use immutable or traceable releases, least privilege, explicit stop conditions, and real service checks.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** A plan may identify missing access or evidence; execution requires an authorized target and observable stop conditions.
 
 ## Workflow
 
@@ -55,27 +37,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 
 Google’s [canary release guidance](https://sre.google/workbook/canarying-releases/) informs bounded exposure and evaluation. Adapt it to the actual traffic and architecture; a startup does not need a complex rollout platform merely to satisfy this protocol.
 
+## Exposure Gate
+
+Separate installing code from enabling user behavior. Define observation based on meaningful traffic and critical operations, not a fixed waiting ritual. Record who pauses and who promotes; if a rollback cannot reverse data changes, state forward-repair and restore consequences before launch.
+
 ## Decision Rules
 
 - If a schema change prevents rollback, use a compatible migration or explicitly plan forward recovery.
 - If a canary sample is unrepresentative, do not infer global safety from it.
 
-## Validation
+## Output Contract
+
+Deployment plan with stages, gates, health signals, ownership, stop rules, and rollback or forward recovery.
+
+## Quality Gates
 
 - Can the service’s real critical operation succeed after rollout?
 - Are absolute health thresholds checked as well as comparison with the previous release?
+- Absolute health and business correctness hold as well as candidate-versus-baseline comparison.
 
-## Common Failure Modes
+## Failure Modes
 
 - Process running equals healthy: exercise real behavior.
 - Rollback command without compatible data: test recovery.
 
-## Escalation and Collaboration
+## Handoffs
 
 Backend and Database Engineers verify compatibility; QA supplies tests; Security reviews exposure; release owner approves promotion.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

@@ -1,42 +1,24 @@
 # Database Review
 
+Context: [Database Engineer](README.md).
+
 ## Purpose
 
 Assess persistence design and changes for integrity, performance, and operational safety.
 
-## When to Use
+## Activate When
 
 A schema, query set, or database change needs review.
 
-## When Not to Use
+## Do Not Use When
 
 Do not reduce review to normalization or query speed alone.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Schema/change, engine/version, workload, invariants, and migration path.
 
-Diff or schema, access patterns, engine/version, data volume, transactions, and migration plan.
-
-### Helpful
-
-Database engine/version, schema, constraints, workload evidence, volumes, retention needs, and recovery objectives.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Prioritized findings with violated invariant or workload, evidence, remediation, and validation needs.
-
-## Operating Principles
-
-Design from invariants and access patterns; verify query semantics separately from speed and migration safety separately from syntax.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** If representative workload is absent, separate semantic findings from unverified performance claims.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Review migration compatibility, lock exposure, backup, retention, and restore assumptions.
 4. Prioritize reachable integrity and availability risks above cosmetic schema preferences.
 
+## Three Independent Checks
+
+Review final-state integrity, workload behavior, and transition safety separately. A valid schema can still require an unsafe migration; a fast query can still return the wrong grain. Trace application, jobs, exports, and admin writes that bypass the main service path.
+
 ## Decision Rules
 
 - If a constraint is absent but the application assumes it, require evidence of safe enforcement or add a suitable constraint.
 - If production impact cannot be estimated, require rehearsal before approval.
 
-## Validation
+## Output Contract
+
+Prioritized findings with violated invariant or workload, evidence, remediation, and validation needs.
+
+## Quality Gates
 
 - Are findings tied to concrete data or concurrency scenarios?
 - Are engine-specific claims verified for the installed version?
+- No single passing check is used as proof of all three dimensions.
 
-## Common Failure Modes
+## Failure Modes
 
 - ORM abstraction hides SQL risk: inspect generated behavior.
 - Review ignores migration: assess the path, not only final schema.
 
-## Escalation and Collaboration
+## Handoffs
 
 Backend, DevOps, and Security owners provide implementation and operational evidence.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

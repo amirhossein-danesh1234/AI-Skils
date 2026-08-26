@@ -1,42 +1,24 @@
 # Integration Design
 
+Context: [Backend Engineer](README.md).
+
 ## Purpose
 
 Connect external systems while containing contract, trust, and partial-failure risks.
 
-## When to Use
+## Activate When
 
 A service needs a third-party API, webhook, or cross-system exchange.
 
-## When Not to Use
+## Do Not Use When
 
 Do not assume external success, availability, or schema stability.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Actual provider contract/version, intended effects, trust, and failure tolerance.
 
-Provider contract/version, auth, payloads, business effects, rate limits, and failure tolerance.
-
-### Helpful
-
-Repository, runtime, business rules, contracts, data model, identity context, failure evidence, and deployment constraints.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Integration boundary with mapping, validation, timeouts, retries, idempotency, reconciliation, and monitoring.
-
-## Operating Principles
-
-Enforce invariants at the authoritative boundary, make retries safe, redact sensitive diagnostics, and verify persisted outcomes rather than status codes alone.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** A design can use a sandbox; live credentials or external effects require explicit authority.
 
 ## Workflow
 
@@ -55,27 +37,30 @@ When a response is lost after external success, use a guaranteed safe replay of 
 
 Test crash-after-external-success, concurrent attempts, changed payload under the same key, duplicate events, and retry after the provider retention boundary with a contract-faithful safe environment. [Stripe's idempotency documentation](https://docs.stripe.com/api/idempotent_requests) illustrates why provider-specific retention and request semantics must be inspected; apply the actual provider's rules, not Stripe assumptions to another service.
 
+## Webhook and Reconciliation
+
+Verify webhook authenticity using the provider mechanism and raw payload requirements; distinguish authenticity from business validity and replay protection. Reconcile out-of-order events against authoritative status rather than trusting arrival order. Bound provider rate-limit retries and retain unresolved operations for an owned repair path.
+
 ## Decision Rules
 
 - If a timeout leaves outcome unknown, preserve the semantic operation identity. Use same-key replay only under verified provider guarantees, or query/reconcile authoritative status; do not create a fresh identity to escape ambiguity.
 - If provider data is untrusted, validate it before business processing or storage.
 
-## Validation
+## Output Contract
+
+Integration boundary with mapping, validation, timeouts, retries, idempotency, reconciliation, and monitoring.
+
+## Quality Gates
 
 - Can both systems converge after partial failure?
 - Are rate limits, token handling, and contract changes observable?
+- Lost response, duplicate callback, changed payload, and expired idempotency protection have distinct safe behavior.
 
-## Common Failure Modes
+## Failure Modes
 
 - Happy-path SDK call treated as integration: test failures.
 - Webhook delivery trusted blindly: verify authenticity and replay policy.
 
-## Escalation and Collaboration
+## Handoffs
 
 Security reviews trust; Database Engineer checks consistency; DevOps handles operational signals; Product Manager defines degraded behavior.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

@@ -1,42 +1,24 @@
 # Project Planning
 
+Context: [Project Manager](README.md).
+
 ## Purpose
 
 Turn approved scope into a feasible delivery plan with explicit uncertainty.
 
-## When to Use
+## Activate When
 
 A project starts, changes materially, or needs recovery planning.
 
-## When Not to Use
+## Do Not Use When
 
 Product Manager chooses product value and scope; Team Manager controls staffing authority.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Approved outcome/scope, acceptance, actual capacity, dependency owners, and deadline basis.
 
-Approved outcome, scope, acceptance, deadlines, owners, dependencies, estimates, capacity, and constraints.
-
-### Helpful
-
-Approved scope, acceptance conditions, owners, estimates, calendars, dependencies, capacity, risks, and deadline basis.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Plan with work packages, owners, priorities, dependencies, estimates, milestones, buffers, risks, and definition of done.
-
-## Operating Principles
-
-Report forecast and evidence, not optimistic status colors; change commitments explicitly when assumptions fail.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Initial estimates may be ranges or discovery tasks; no exact date should be manufactured from a target.
 
 ## Workflow
 
@@ -58,27 +40,30 @@ Use milestones with demonstrable outcomes and decision gates. Establish when est
 
 Before handoff, run a downside walkthrough: a dependency is late, a specialist is unavailable, or testing exposes rework. Explain which buffer or decision absorbs the event and what commitment changes. A plan is ready when owners understand their outcomes, capacity is confirmed or explicitly conditional, and the sponsor can see unresolved trade-offs.
 
+## Capacity Reconciliation
+
+Declare the denominator of capacity deductions: support as share of gross time differs from share after leave. Avoid subtracting the same obligation twice. Model scarce skills and external approvals before parallelizing work; adding a generic person cannot remove a specialist or approval bottleneck immediately.
+
 ## Decision Rules
 
 - If required work exceeds capacity, present explicit trade-offs to the sponsor.
 - If estimates are immature, schedule discovery and use forecast ranges instead of false dates.
 
-## Validation
+## Output Contract
+
+Plan with work packages, owners, priorities, dependencies, estimates, milestones, buffers, risks, and definition of done.
+
+## Quality Gates
 
 - Does every deliverable have an owner and acceptance condition?
 - Does the plan remain coherent with buffers and dependencies rather than 100% utilization?
+- A downside walkthrough exposes a feasible response or an explicit sponsor trade-off.
 
-## Common Failure Modes
+## Failure Modes
 
 - Task list mistaken for plan: add sequence and capacity.
 - Deadline reverse-engineered into estimates: preserve evidence.
 
-## Escalation and Collaboration
+## Handoffs
 
 Product Manager confirms scope; engineering estimates; Team Manager confirms capacity; sponsor approves trade-offs.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

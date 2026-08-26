@@ -1,42 +1,24 @@
 # Edge Case Analysis
 
+Context: [QA-Test Engineer](README.md).
+
 ## Purpose
 
 Discover high-value boundary and failure scenarios missing from current coverage.
 
-## When to Use
+## Activate When
 
 A feature’s happy path is defined but unusual conditions are underexplored.
 
-## When Not to Use
+## Do Not Use When
 
-UX edge-case-design.md chooses user behavior; this skill identifies risk and test needs.
+UX [edge-case-design.md](../../Product/Product%20Designer-UX%20Designer/edge-case-design.md) chooses user behavior; this skill identifies risk and test needs.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** States, limits, dependencies, actor permissions, and known coverage.
 
-State model, inputs, permissions, dependencies, limits, and existing tests.
-
-### Helpful
-
-Requirements, change diff, architecture, critical journeys, known defects, test environments, and release context.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Prioritized edge-case inventory with trigger, expected invariant, impact, and test approach.
-
-## Operating Principles
-
-Prioritize impact, likelihood, change exposure, and usage; report skipped, blocked, flaky, and failed tests separately.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Undefined expected behavior becomes a policy question; do not invent an oracle to fill the test matrix.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Trace partial completion, duplicate events, cancellation, and recovery.
 4. Prioritize by credible impact and identify undefined behavior for owner resolution.
 
+## Reachable Combination
+
+Combine risk-bearing conditions such as timeout plus retry, stale grant plus cached state, or concurrent updates at a limit. Exclude impossible combinations only when constraints demonstrably enforce impossibility. Prioritize data loss, money, and trust-boundary failures over exotic low-consequence inputs.
+
 ## Decision Rules
 
 - If a combination is impossible under enforced constraints, do not inflate the test plan with it.
 - If an edge case can corrupt data or cross a trust boundary, prioritize it even when rare.
 
-## Validation
+## Output Contract
+
+Prioritized edge-case inventory with trigger, expected invariant, impact, and test approach.
+
+## Quality Gates
 
 - Are cases grounded in reachable states?
 - Does every high-risk undefined behavior have an owner?
+- Each selected case has a reachable trigger, protected invariant, and expected observable result.
 
-## Common Failure Modes
+## Failure Modes
 
 - Exotic cases crowd out common failure: rank by risk.
 - Edge list without oracle: state the invariant to preserve.
 
-## Escalation and Collaboration
+## Handoffs
 
 UX and Product Manager define intended behavior; Backend and Database Engineers validate concurrency mechanisms.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

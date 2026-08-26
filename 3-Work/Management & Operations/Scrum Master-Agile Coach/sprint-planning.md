@@ -1,42 +1,24 @@
 # Sprint Planning
 
+Context: [Scrum Master-Agile Coach](README.md).
+
 ## Purpose
 
 Facilitate a realistic Sprint Goal and a developer-owned plan when Scrum is used.
 
-## When to Use
+## Activate When
 
 A Scrum team is preparing its next Sprint.
 
-## When Not to Use
+## Do Not Use When
 
 Do not assign tasks top-down or treat every backlog item as a fixed commitment.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Product Goal, ordered backlog, Definition of Done, capacity, and actual Scrum accountabilities.
 
-Product Goal, ordered backlog, capacity, Definition of Done, prior learning, and dependencies.
-
-### Helpful
-
-Team working agreements, goals, backlog readiness, capacity, delivery observations, and impediment evidence.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Sprint Goal, selected work forecast, initial plan, risks, and adaptation agreements.
-
-## Operating Principles
-
-Use Scrum commitments when the team actually uses Scrum; otherwise adapt flow practices openly. Do not present a hybrid process as strict Scrum.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** A repository Product Manager is not automatically the appointed Product Owner; establish the real role.
 
 ## Workflow
 
@@ -53,27 +35,30 @@ Planning addresses why the Sprint is valuable, what can be done, and how the sel
 
 Use the [official Scrum Guide](https://scrumguides.org/scrum-guide.html) when making claims about Scrum itself. If the organization uses a different delivery method, adapt planning practices openly instead of misrepresenting a hybrid as strict Scrum.
 
+## Forecast Integrity
+
+Developers select and plan feasible work toward a coherent Sprint Goal using actual capacity and dependencies. Protect Definition of Done rather than reducing quality to meet a point target. Distinguish an external promised date from the team forecast and surface incompatibility to the commitment owner.
+
 ## Decision Rules
 
 - If the goal is incoherent, narrow the selection before adding more items.
 - If capacity changes, adapt scope collaboratively without silently lowering quality.
 
-## Validation
+## Output Contract
+
+Sprint Goal, selected work forecast, initial plan, risks, and adaptation agreements.
+
+## Quality Gates
 
 - Is the Sprint Goal clear and the plan owned by Developers?
 - Does selected work account for Definition of Done and dependencies?
+- Selected work is a forecast with an adaptable plan, not a manager-imposed productivity quota.
 
-## Common Failure Modes
+## Failure Modes
 
 - Planning becomes assignment meeting: preserve self-management.
 - Velocity treated as quota: use evidence and judgment.
 
-## Escalation and Collaboration
+## Handoffs
 
 Product Manager may supply product intent only if authorized; Developers own the plan; Project Manager handles external commitments.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

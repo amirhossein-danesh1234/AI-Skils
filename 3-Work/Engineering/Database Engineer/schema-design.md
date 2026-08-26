@@ -1,42 +1,24 @@
 # Schema Design
 
+Context: [Database Engineer](README.md).
+
 ## Purpose
 
 Design a physical schema that enforces invariants and supports actual access patterns.
 
-## When to Use
+## Activate When
 
 A logical model needs implementation or schema change.
 
-## When Not to Use
+## Do Not Use When
 
 Do not optimize theoretical elegance while ignoring workload, migration, and engine behavior.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Logical model, engine/version, invariants, and access patterns.
 
-Logical model, engine/version, access patterns, volumes, constraints, and retention requirements.
-
-### Helpful
-
-Database engine/version, schema, constraints, workload evidence, volumes, retention needs, and recovery objectives.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-DDL proposal with keys, constraints, types, relationships, indexes, access rationale, and migration implications.
-
-## Operating Principles
-
-Design from invariants and access patterns; verify query semantics separately from speed and migration safety separately from syntax.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Exact index tuning can follow workload evidence; money precision, identity, tenant scope, and deletion rules need explicit decisions.
 
 ## Workflow
 
@@ -57,27 +39,30 @@ Plan the transition from current data: preflight violations, compatible addition
 
 The final record must allow another engineer to explain why valid records are accepted, invalid records are rejected, common queries remain feasible, and existing data can migrate safely. Keep business policy questions with the policy owner rather than encoding guesses as irreversible constraints.
 
+## Constraint Boundaries
+
+For each invariant, identify whether the engine can enforce it directly or needs a transaction protocol. Test null, duplicate, orphan, cross-tenant relationship, and concurrent creation. Explain valid exceptions instead of encoding a guessed universal rule into an irreversible constraint.
+
 ## Decision Rules
 
 - If correctness can be enforced with a database constraint, prefer it over application-only checks.
 - If denormalization adds duplicate state, define repair and reconciliation before adoption.
 
-## Validation
+## Output Contract
+
+DDL proposal with keys, constraints, types, relationships, indexes, access rationale, and migration implications.
+
+## Quality Gates
 
 - Do constraints reject invalid and permit valid domain examples?
 - Are query plans, write cost, lock behavior, and migration safety considered?
+- DDL accepts valid domain examples and rejects the intended invalid ones on the installed engine.
 
-## Common Failure Modes
+## Failure Modes
 
 - Nullable fields hide undefined states: decide semantics.
 - Indexes added without workload: justify each access path.
 
-## Escalation and Collaboration
+## Handoffs
 
 Backend Engineer confirms query and write behavior; DevOps reviews rollout; Security checks sensitive-data handling.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

@@ -1,42 +1,24 @@
 # Infrastructure Security
 
+Context: [Security Engineer](README.md).
+
 ## Purpose
 
 Reduce attack paths through hosts, networks, identities, and deployment infrastructure.
 
-## When to Use
+## Activate When
 
 Infrastructure is provisioned or exposure and privilege change.
 
-## When Not to Use
+## Do Not Use When
 
 Do not harden blindly in ways that break recovery or unrelated services.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Actual topology, identities, listeners, asset sensitivity, and authorized boundary.
 
-Topology, asset sensitivity, identities, network paths, current configuration, and authorized scope.
-
-### Helpful
-
-Architecture and code, data classification, actors, trust boundaries, exposure, existing controls, and authorized test scope.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Threat-based infrastructure findings or control plan with access, exposure, patching, logging, and recovery checks.
-
-## Operating Principles
-
-Separate confirmed vulnerability from suspected weakness; prioritize reachable impact and never include usable secrets or unnecessary exploit detail in public artifacts.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** A hardening proposal may be read-only; access/firewall changes require preservation of recovery and consumer paths.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Choose least-privilege, segmentation, configuration, update, and detection controls proportionate to exposure.
 4. Validate intended access and denied paths while preserving emergency recovery.
 
+## Reachability and Privilege
+
+Trace ingress to exposed service, service identity to secrets/data, and administrative access to control plane. Prioritize paths with credible impact rather than checklist count. Test denied paths as well as required ones; verify emergency access remains controlled and recoverable.
+
 ## Decision Rules
 
 - If a firewall or identity change may lock out operators, establish a tested recovery path first.
 - If a service is not required externally, remove exposure only after confirming its consumers and authority.
 
-## Validation
+## Output Contract
+
+Threat-based infrastructure findings or control plan with access, exposure, patching, logging, and recovery checks.
+
+## Quality Gates
 
 - Are administrative paths constrained and monitored?
 - Do controls preserve needed service behavior and recoverability?
+- A control reduces the documented attack path without silently breaking essential service or recovery.
 
-## Common Failure Modes
+## Failure Modes
 
 - Port closure breaks a dependency: inspect consumers.
 - Patch level used as sole risk measure: consider reachability and privilege.
 
-## Escalation and Collaboration
+## Handoffs
 
 DevOps implements changes; service owners confirm consumers; incident response handles active compromise.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

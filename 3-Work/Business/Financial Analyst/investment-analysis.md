@@ -1,42 +1,24 @@
 # Investment Analysis
 
+Context: [Financial Analyst](README.md).
+
 ## Purpose
 
 Compare an investment’s incremental future value with alternatives and downside.
 
-## When to Use
+## Activate When
 
 A capital, project, or build-versus-buy decision requires economic analysis.
 
-## When Not to Use
+## Do Not Use When
 
 Do not provide personal investment suitability advice or count sunk costs as future benefit.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Incremental alternatives, future cash drivers, horizon, funding limits, and risk.
 
-Alternatives, incremental cash flows, timing, capital constraints, risk, and decision horizon.
-
-### Helpful
-
-Decision scope, actual financial records, currency, period, accounting basis, business drivers, and financing constraints.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Investment comparison with cash flows, valuation method, assumptions, sensitivity, opportunity cost, and recommendation.
-
-## Operating Principles
-
-Keep historical data, forecast, assumption, scenario, and sensitivity distinct. Show units, timing, denominators, and downside exposure.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Unsupported discount/terminal assumptions require sensitivity or a simpler bounded comparison, not false precision.
 
 ## Workflow
 
@@ -53,27 +35,30 @@ If discounted cash flow is appropriate, keep cash-flow timing and discount conve
 
 Show break conditions for adoption, price, delay, cost, or useful life. Payback can expose liquidity timing but ignores value beyond the cutoff; NPV depends on uncertain cash flows and discounting. Use these measures as decision aids rather than automatic authority. Consider staged investment when learning can reduce irreversible exposure.
 
+## Decision Boundary
+
+Show the adoption, useful life, cost, or delay at which the preferred option changes. Separate payback timing from total value and include exit obligations. Route company-level attention/capital allocation to Founder Advisor; a favorable NPV alone does not authorize investment.
+
 ## Decision Rules
 
 - If discount rate or terminal value dominates the result, expose sensitivity and seek justified assumptions.
 - If benefits are unverified, stage commitment or run a proof before full investment.
 
-## Validation
+## Output Contract
+
+Investment comparison with cash flows, valuation method, assumptions, sensitivity, opportunity cost, and recommendation.
+
+## Quality Gates
 
 - Are cash flows incremental and double counting avoided?
 - Does the recommendation fit financing and risk constraints?
+- All alternatives use consistent scope, timing, currency, and incremental baseline.
 
-## Common Failure Modes
+## Failure Modes
 
 - Sunk cost drives choice: compare future alternatives.
 - Precise NPV hides weak inputs: show ranges.
 
-## Escalation and Collaboration
+## Handoffs
 
 Business Strategist assesses strategic fit; engineers assess feasibility; qualified finance professionals and executive owner approve major commitments.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

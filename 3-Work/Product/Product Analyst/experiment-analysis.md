@@ -1,42 +1,24 @@
 # Experiment Analysis
 
+Context: [Product Analyst](README.md).
+
 ## Purpose
 
 Estimate an experiment’s effect and decide what the evidence warrants.
 
-## When to Use
+## Activate When
 
 A randomized product experiment has results or needs analysis planning.
 
-## When Not to Use
+## Do Not Use When
 
 Observational comparisons need a different causal design; significance alone does not justify launch.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Assignment/exposure logs, planned hypothesis and analysis, outcome data, and randomization unit.
 
-Assignment unit, hypothesis, primary metric, guardrails, randomization, exposure, sample plan, and stopping rule.
-
-### Helpful
-
-Decision question, event and identity definitions, time windows, source access, instrumentation history, and relevant product changes.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Experiment validity assessment, effect estimates and intervals, guardrails, limitations, and ship/iterate/stop recommendation.
-
-## Operating Principles
-
-Preserve grain and exposure definitions, reconcile counts, and report null or inconclusive findings as readily as positive ones.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** No pre-analysis plan means deviations and exploratory status must be explicit; it does not permit backdating a plan.
 
 ## Workflow
 
@@ -57,27 +39,30 @@ An inconclusive interval is not proof of no effect. A statistically detectable e
 
 Recommend ship, limited rollout, revise, stop, or further study based on validity, practical value, guardrails, and reversibility. The product owner makes the launch decision; the analyst reports what the experiment can and cannot establish.
 
+## Decision Threshold
+
+Separate statistical uncertainty from the business threshold: show whether the interval includes meaningful benefit, negligible effect, and unacceptable harm. A failed integrity check can block the treatment-effect estimate while still allowing a useful instrumentation finding. Do not selectively extend only disappointing experiments.
+
 ## Decision Rules
 
 - If randomization or measurement is invalid, do not interpret a treatment effect until repaired.
 - If evidence is inconclusive, report that result; extend only under a valid preplanned or justified sequential method.
 
-## Validation
+## Output Contract
+
+Experiment validity assessment, effect estimates and intervals, guardrails, limitations, and ship/iterate/stop recommendation.
+
+## Quality Gates
 
 - Are exclusions independent of treatment outcomes and missingness assessed?
 - Does the decision consider effect magnitude, uncertainty, and guardrails rather than only a p-value?
+- Guardrail losses and uncertainty cannot be hidden by a positive primary average.
 
-## Common Failure Modes
+## Failure Modes
 
 - Repeated peeking inflates false positives: honor stopping design.
 - Post-hoc segment winner promoted as confirmed: label exploratory findings.
 
-## Escalation and Collaboration
+## Handoffs
 
 Product Manager owns launch choice; engineers confirm assignment; seek statistical expertise for interference, sequential, or complex causal designs.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

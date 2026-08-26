@@ -1,42 +1,24 @@
-# Scope Management
+# Product Manager — Scope Management
+
+Context: [Product Manager](README.md).
 
 ## Purpose
 
 Protect a coherent product outcome while making additions and exclusions explicit.
 
-## When to Use
+## Activate When
 
 A feature expands, requirements conflict, or an MVP needs a defensible boundary.
 
-## When Not to Use
+## Do Not Use When
 
 Project Manager manages delivery baseline changes; this skill decides product inclusion and value.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Product goal, current in/out scenarios, and proposed changes.
 
-Goal, accepted scope, proposed changes, user scenarios, constraints, and evidence.
-
-### Helpful
-
-User segment and scenario, evidence, business objective, constraints, current behavior, relevant policies, and decision owner.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-In/out scope decision, affected scenarios, deferred alternatives, acceptance changes, and rationale.
-
-## Operating Principles
-
-Maintain traceability from problem to scope to acceptance. Reject weak requests with reasons and a better alternative; distinguish useful outcomes from shipped output.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Detailed schedule impact can follow a product-value decision, but changes remain conditional until delivery feasibility is confirmed.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Estimate the value, dependencies, maintenance, and opportunity cost of each addition.
 4. Negotiate a coherent cut and update requirement and acceptance references.
 
+## Coherent Cuts
+
+Evaluate cuts at scenario boundaries. Removing a whole optional workflow may be safe; removing authorization or recovery from a retained workflow is not. For each addition, specify displaced scope or a separate future decision rather than hiding it under the MVP label.
+
 ## Decision Rules
 
 - If a cut breaks safety, integrity, or the core outcome, cut a whole scenario instead.
 - If a change is valuable but not necessary now, defer it with a revisit condition.
 
-## Validation
+## Output Contract
+
+In/out scope decision, affected scenarios, deferred alternatives, acceptance changes, and rationale.
+
+## Quality Gates
 
 - Can users complete the retained scenario without hidden manual gaps?
 - Do exclusions, acceptance, and release communication agree?
+- Retained users can complete a valid outcome with its essential integrity and safety controls.
 
-## Common Failure Modes
+## Failure Modes
 
 - MVP means unsafe incomplete behavior: preserve essential controls.
 - Quiet scope drift: record the decision and displaced work.
 
-## Escalation and Collaboration
+## Handoffs
 
 Project Manager updates delivery impacts; UX and engineering assess coherent cuts; decision owner approves trade-offs.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

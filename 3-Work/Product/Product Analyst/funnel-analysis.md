@@ -1,42 +1,24 @@
 # Funnel Analysis
 
+Context: [Product Analyst](README.md).
+
 ## Purpose
 
 Locate where an eligible population stops progressing through a defined task.
 
-## When to Use
+## Activate When
 
 A multi-step journey has unexplained drop-off.
 
-## When Not to Use
+## Do Not Use When
 
 Do not claim the observed drop causes business loss without checking intent and alternative paths.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Ordered or branched task events, identity, entry eligibility, and completion window.
 
-Event definitions, eligible population, step order, identity, conversion window, and tracking history.
-
-### Helpful
-
-Decision question, event and identity definitions, time windows, source access, instrumentation history, and relevant product changes.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Funnel definition, counts and rates, segment differences, tracking checks, likely mechanisms, and next investigation.
-
-## Operating Principles
-
-Preserve grain and exposure definitions, reconcile counts, and report null or inconclusive findings as readily as positive ones.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Without sequence-level data, report step counts rather than claiming an entity-level funnel.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Compare counts and conversion across meaningful segments and periods.
 4. Investigate large losses with UX evidence and instrumentation checks before recommending changes.
 
+## Sequence Audit
+
+Manually trace a few completed, abandoned, retried, and alternative-route cases. Reconcile raw events to deduplicated entities at each step. Distinguish users who chose an alternative successful route from failures; measure time between steps to separate abandonment from unfinished work.
+
 ## Decision Rules
 
 - If steps are optional or order varies, model branches rather than forcing one linear funnel.
 - If the final window is incomplete, exclude or label immature entries.
 
-## Validation
+## Output Contract
+
+Funnel definition, counts and rates, segment differences, tracking checks, likely mechanisms, and next investigation.
+
+## Quality Gates
 
 - Do counts reconcile and denominators remain consistent?
 - Can tracking loss or identity fragmentation explain the drop?
+- A drop-off is not assigned a UX cause until tracking and eligibility alternatives are checked.
 
-## Common Failure Modes
+## Failure Modes
 
 - Page views treated as task intent: qualify entry.
 - Different cohorts compared as one path: preserve entity-level progression.
 
-## Escalation and Collaboration
+## Handoffs
 
 UX Designer investigates friction; Backend and Frontend Engineers validate events; Product Manager prioritizes intervention.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

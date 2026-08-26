@@ -1,71 +1,56 @@
 # Business Strategy
 
+Context: [Business Strategist](README.md).
+
 ## Purpose
 
-Choose an economically credible company direction under resource constraints.
+Choose the strongest economic and competitive path for a business problem the company has agreed to pursue.
 
-## When to Use
+## Activate When
 
-A business must choose markets, activities, or major growth paths.
+A pursued business problem needs choices about value capture, market approach, activities, or growth mechanism.
 
-## When Not to Use
+## Do Not Use When
 
-Product strategy owns product advantage; executives retain capital and survival decisions.
+Founder Advisor evaluates whether the company should pursue the problem or change its resource envelope; Product Strategist owns product advantage.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** An agreed business problem, customer/market evidence, capabilities, and resource envelope.
 
-Company objective, runway constraints, market evidence, capabilities, economics, and alternatives.
-
-### Helpful
-
-Company stage, cash constraints, customer and market evidence, operating capabilities, current economics, and decision horizon.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Strategic diagnosis, choices, exclusions, resource implications, risks, milestones, and executive decision request.
-
-## Operating Principles
-
-Compare credible alternatives and opportunity cost; separate business-model assumptions from verified financial performance.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Founder Advisor decides whether the company should pursue it at all; an attractive economic path is not approval to expand resources.
 
 ## Workflow
 
-1. Inspect current economic engine, bottleneck, competitive position, and cash constraints.
-2. Compare pursue, narrow, partner, buy, delay, and stop options.
-3. Evaluate demand, margins, distribution, capability, defensibility, and downside survivability.
-4. Choose a coherent path with staged commitments and explicit learning or exit gates.
+1. Confirm the pursued business problem and resource envelope; inspect current value creation/capture, bottleneck, and competitive position.
+2. Compare viable revenue, distribution, delivery, partner, and operating models within that scope, retaining a no-change baseline.
+3. Test customer demand, contribution, bargaining power, capability, defensibility, and cash timing with specialist evidence.
+4. Recommend mutually reinforcing activities, exclusions, and learning gates. Return an unaffordable or invalidated pursuit decision to Founder Advisor rather than expanding company resources.
+
+## Economic Coherence
+
+Choose where value is created and captured, the customer/payer, route to market, critical activities, and defensibility. Test whether these choices reinforce each other under realistic costs and competitor response. Return company-envelope changes to Founder Advisor instead of deciding capital allocation inside this skill.
 
 ## Decision Rules
 
 - If a strategy cannot survive the downside until learning arrives, reduce commitment or reject it.
 - If choices require incompatible capabilities, narrow focus rather than fund all directions.
 
-## Validation
+## Output Contract
+
+Economic/competitive diagnosis, coherent path, rejected alternatives, resource assumptions, validation gates, and company-level decisions requiring Founder Advisor.
+
+## Quality Gates
 
 - Do chosen activities reinforce each other and fit resources?
 - Are opportunity costs and disconfirming evidence visible?
+- The recommendation explains the strongest economic/competitive path within a stated pursuit decision.
 
-## Common Failure Modes
+## Failure Modes
 
 - Ambition presented as strategy: specify exclusions.
 - Optimistic market story hides cash risk: test timing.
 
-## Escalation and Collaboration
+## Handoffs
 
-Market Researcher supplies evidence; Financial Analyst models scenarios; Product Strategist aligns product; executive owner decides.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.
+Market Researcher supplies evidence; Financial Analyst validates economics; Product Strategist selects customer/product advantage; Founder Advisor reviews the company pursuit and resource implications.

@@ -1,42 +1,24 @@
 # Financial Forecasting
 
+Context: [Financial Analyst](README.md).
+
 ## Purpose
 
 Build a driver-based forecast that separates history, assumptions, and uncertainty.
 
-## When to Use
+## Activate When
 
 A business needs a forward view for planning or resource decisions.
 
-## When Not to Use
+## Do Not Use When
 
 Do not extend historical percentages mechanically or present forecast precision as certainty.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Historical baseline or explicit pre-revenue status, operating drivers, horizon, and constraints.
 
-Historical records, operating drivers, planned changes, time horizon, currency, and financing constraints.
-
-### Helpful
-
-Decision scope, actual financial records, currency, period, accounting basis, business drivers, and financing constraints.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Forecast with assumptions, linked revenue/cost/cash drivers, scenarios, sensitivities, reconciliation, and update rules.
-
-## Operating Principles
-
-Keep historical data, forecast, assumption, scenario, and sensitivity distinct. Show units, timing, denominators, and downside exposure.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** A new business may use assumptions only, labeled clearly; no invented historical records or unsupported base case.
 
 ## Workflow
 
@@ -57,27 +39,30 @@ Create coherent scenarios and one-way sensitivities separately. Inspect the firs
 
 The final output includes a recommendation, model limitations, dominant assumptions, downside consequences, and the next decision. Formal reporting treatment requires the applicable accounting policy and qualified review; [IAS 7](https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/) is a reference for IFRS cash-flow reporting, not a universal policy for every organization.
 
+## Forecast Accountability
+
+Link each driver to an operational owner and evidence update trigger. Reconcile growth with sales cycle, onboarding, staffing, and working capital. Backtest forecasts against actuals by driver to separate biased assumptions from changed conditions, then revise forward expectations without rewriting history.
+
 ## Decision Rules
 
 - If a driver lacks evidence, label it and show the decision’s sensitivity to it.
 - If the model implies impossible capacity or funding, revise assumptions rather than hide the gap.
 
-## Validation
+## Output Contract
+
+Forecast with assumptions, linked revenue/cost/cash drivers, scenarios, sensitivities, reconciliation, and update rules.
+
+## Quality Gates
 
 - Do balances and cash movements reconcile across periods?
 - Are formulas, units, scenarios, and assumption sources traceable?
+- A target is not presented as the expected outcome unless the driver evidence supports it.
 
-## Common Failure Modes
+## Failure Modes
 
 - Forecast copied from targets: separate ambition and expectation.
 - Growth without working capital: model cash timing.
 
-## Escalation and Collaboration
+## Handoffs
 
 Operations and Sales validate drivers; accountant confirms reporting basis; executive owner approves planning assumptions.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

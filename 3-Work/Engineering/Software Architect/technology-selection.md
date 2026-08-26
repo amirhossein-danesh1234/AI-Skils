@@ -1,42 +1,24 @@
 # Technology Selection
 
+Context: [Software Architect](README.md).
+
 ## Purpose
 
 Choose a technology against real requirements and lifecycle constraints.
 
-## When to Use
+## Activate When
 
 A consequential dependency, platform, or tool choice is due.
 
-## When Not to Use
+## Do Not Use When
 
 Do not replace a working stack for novelty or use vendor claims as verified performance.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Use case, hard constraints, existing stack, team capability, and support horizon.
 
-Use case, existing stack, hard constraints, team skills, budget, deployment needs, and support horizon.
-
-### Helpful
-
-Current topology and code, domain rules, load evidence, quality targets, team capabilities, constraints, and migration context.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Decision matrix or narrative with hard gates, evaluated options, proof results, risks, exit cost, and recommendation.
-
-## Operating Principles
-
-Prefer a modular single deployment when adequate. Introduce distribution or abstraction only for demonstrated needs, with observable failure and recovery behavior.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Shortlists can use public information; final choice needs current version/licensing and a proof of the uncertain requirement.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Compare viable options on total cost, maturity, ecosystem, team fit, lock-in, and reversibility.
 4. Run a bounded proof on the most uncertain requirement using current official documentation.
 
+## Decision Gate Ordering
+
+Apply security, licensing, deployment, and capability exclusions before weighted preferences. Evaluate the difficult case in a bounded proof: migration, failure, upgrade, data export, or actual workload. Include exit and skill-acquisition cost; do not let a polished quickstart establish operational suitability.
+
 ## Decision Rules
 
 - If an option fails a hard constraint, do not compensate with a high preference score.
 - If uncertainty is material and testable cheaply, prototype before committing.
 
-## Validation
+## Output Contract
+
+Decision matrix or narrative with hard gates, evaluated options, proof results, risks, exit cost, and recommendation.
+
+## Quality Gates
 
 - Are versions, support claims, and license assumptions verified?
 - Does the proof resemble the actual workload and include failure behavior?
+- The selected option passes hard constraints and has a credible exit or containment path.
 
-## Common Failure Modes
+## Failure Modes
 
 - Benchmark marketing accepted uncritically: reproduce relevant cases.
 - Migration and exit cost omitted: include lifecycle cost.
 
-## Escalation and Collaboration
+## Handoffs
 
 Security reviews supply-chain and compliance risk; DevOps checks operation; engineers test integration; owner approves spend.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

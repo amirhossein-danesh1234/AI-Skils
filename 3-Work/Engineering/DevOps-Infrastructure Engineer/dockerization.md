@@ -1,42 +1,24 @@
 # Dockerization
 
+Context: [DevOps-Infrastructure Engineer](README.md).
+
 ## Purpose
 
 Package an application with a reproducible runtime and safe container behavior.
 
-## When to Use
+## Activate When
 
 A service needs a container image or an existing image is unreliable or oversized.
 
-## When Not to Use
+## Do Not Use When
 
 Do not assume containers remove host, network, or secret-management risks.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Runtime/build contract, startup/shutdown behavior, writable state, and deployment target.
 
-Application runtime/version, build process, dependencies, entrypoint, storage, and deployment target.
-
-### Helpful
-
-Actual infrastructure and listeners, release process, identities, dependencies, service objectives, secrets handling, and current incident state.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Container build and runtime specification with minimal privileges, health behavior, persistence, and tests.
-
-## Operating Principles
-
-Inspect before mutation; use immutable or traceable releases, least privilege, explicit stop conditions, and real service checks.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Image size optimization can wait until correctness and secret exclusion are verified.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Define user privileges, signals, graceful shutdown, resource needs, and persistent data boundaries.
 4. Build and run representative operations, including restart and dependency failure.
 
+## Runtime Contract
+
+Test signal handling, graceful termination, non-root writable paths, dependency readiness, and replacement with persistent data intact. Keep build-time credentials out of layers and context. A health endpoint should distinguish liveness from readiness when restarting an unhealthy dependency would worsen an outage.
+
 ## Decision Rules
 
 - If data must survive replacement, place it in an explicitly managed persistent store.
 - If a base image or dependency is unpinned, define how reproducibility and updates are controlled.
 
-## Validation
+## Output Contract
+
+Container build and runtime specification with minimal privileges, health behavior, persistence, and tests.
+
+## Quality Gates
 
 - Does the image run the real application without hidden host assumptions?
 - Are secrets absent from image layers and build context?
+- The shipped image runs without hidden local mounts or credentials and survives a representative restart.
 
-## Common Failure Modes
+## Failure Modes
 
 - Works only with local mounts: test the shipped image.
 - Root privileges used by default: minimize and justify.
 
-## Escalation and Collaboration
+## Handoffs
 
-Backend Engineer validates runtime behavior; Security reviews image exposure; deployment-design.md governs rollout.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.
+Backend Engineer validates runtime behavior; Security reviews image exposure; [deployment-design.md](deployment-design.md) governs rollout.

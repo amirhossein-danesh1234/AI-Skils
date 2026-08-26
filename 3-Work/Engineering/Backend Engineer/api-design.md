@@ -1,42 +1,24 @@
 # API Design
 
+Context: [Backend Engineer](README.md).
+
 ## Purpose
 
 Define an endpoint contract that consumers can use correctly under success and failure.
 
-## When to Use
+## Activate When
 
 A service needs a new or changed API operation.
 
-## When Not to Use
+## Do Not Use When
 
 API architecture owns system-wide topology; do not choose HTTP shapes without business semantics.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Consumer scenario, operation effect, resource ownership, and permission policy.
 
-Consumer scenarios, resource ownership, operations, permissions, data schema, and compatibility constraints.
-
-### Helpful
-
-Repository, runtime, business rules, contracts, data model, identity context, failure evidence, and deployment constraints.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Contract with request/response schemas, validation, permissions, errors, pagination, idempotency, limits, and version behavior.
-
-## Operating Principles
-
-Enforce invariants at the authoritative boundary, make retries safe, redact sensitive diagnostics, and verify persisted outcomes rather than status codes alone.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Transport details can follow semantics; unresolved consequential rules block affected endpoints, not unrelated contract work.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Specify authentication and object-level authorization, error taxonomy, and privacy-safe responses.
 4. Design pagination, concurrency, retries, timeouts, and compatibility; verify examples with consumers.
 
+## Contract Examples
+
+Specify request and response examples for success, invalid input, denied access, conflict, transient failure, and unknown external outcome. For list operations define deterministic ordering and pagination stability. A compatibility test must exercise a representative existing consumer, not merely validate the new schema.
+
 ## Decision Rules
 
 - If a retry may repeat a side effect, define an idempotency contract or prohibit automatic retry.
 - If a field or behavior change breaks consumers, version or migrate it explicitly.
 
-## Validation
+## Output Contract
+
+Contract with request/response schemas, validation, permissions, errors, pagination, idempotency, limits, and version behavior.
+
+## Quality Gates
 
 - Are success and error examples consistent with business rules and permissions?
 - Can consumers distinguish validation, conflict, authorization, and transient failure?
+- Equivalent retries and concurrent updates have an explicit contract rather than accidental framework behavior.
 
-## Common Failure Modes
+## Failure Modes
 
 - Status codes replace domain semantics: define actual outcomes.
 - Unbounded list endpoints: specify stable pagination and limits.
 
-## Escalation and Collaboration
+## Handoffs
 
 Frontend Engineer validates usability; Security reviews exposure; Database Engineer checks efficient access and consistency.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

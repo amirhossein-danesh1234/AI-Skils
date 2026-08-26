@@ -1,42 +1,24 @@
 # Benchmarking
 
+Context: [Market Researcher](README.md).
+
 ## Purpose
 
 Compare performance or practices against genuinely comparable references.
 
-## When to Use
+## Activate When
 
 A team needs external context for a metric or operating practice.
 
-## When Not to Use
+## Do Not Use When
 
 Do not adopt a benchmark as a target without checking business model and definitions.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Decision, metric/practice definition, candidate peers, and dates.
 
-Decision, metric definition, peer criteria, period, scale, and evidence sources.
-
-### Helpful
-
-Decision question, geography, customer definition, product category, time horizon, source access, and research budget.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Benchmark comparison with normalized definitions, peer fit, gaps, caveats, and actionable implications.
-
-## Operating Principles
-
-Distinguish primary observations, secondary analysis, company claims, analyst estimates, community reports, inference, and unknowns; verify freshness.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Incompatible benchmarks may be context only; do not invent normalization factors.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Normalize only where defensible and retain incompatible cases separately.
 4. Explain whether differences reflect performance, model, maturity, or measurement.
 
+## Comparability Bridge
+
+For each comparison, record business model, scale, geography, period, denominator, and selection method. Explain which differences can be adjusted and which prevent ranking. A best-in-class value may rely on a different service level or risk burden; identify that trade-off before adopting it as a target.
+
 ## Decision Rules
 
 - If definitions cannot be reconciled, do not rank the values as equivalent.
 - If a peer operates at different scale or risk, adapt the practice rather than copy it.
 
-## Validation
+## Output Contract
+
+Benchmark comparison with normalized definitions, peer fit, gaps, caveats, and actionable implications.
+
+## Quality Gates
 
 - Can the comparison be reproduced from source definitions?
 - Does the recommendation account for context?
+- The benchmark can inform a decision without pretending all peers are interchangeable.
 
-## Common Failure Modes
+## Failure Modes
 
 - Best-in-class number becomes universal target: inspect trade-offs.
 - Cherry-picked peer set: justify inclusion.
 
-## Escalation and Collaboration
+## Handoffs
 
 Relevant domain owner interprets implications; Financial or Product Analyst validates measurement.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

@@ -1,42 +1,24 @@
 # Layout Design
 
+Context: [UI Designer](README.md).
+
 ## Purpose
 
 Arrange approved content into stable, readable screen structures.
 
-## When to Use
+## Activate When
 
 A page needs a layout or a layout fails under realistic content.
 
-## When Not to Use
+## Do Not Use When
 
-Responsive behavior across widths belongs with responsive-design.md; do not redefine navigation strategy.
+Responsive behavior across widths belongs with [responsive-design.md](responsive-design.md); do not redefine navigation strategy.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Approved content/task order and target layout constraints.
 
-Content inventory, flow, target viewports, existing grid, and component constraints.
-
-### Helpful
-
-Approved flow, content, reference designs or brand constraints, existing tokens, components, and target devices.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Layout specification with grid, regions, alignment, sizing, overflow, and content stress cases.
-
-## Operating Principles
-
-Use consistent visual rules, measurable contrast and sizing checks, and realistic content; justify exceptions instead of adding arbitrary tokens.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Exact breakpoints may follow content stress tests; the logical reading order is required.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Define width constraints, alignment, wrapping, and overflow instead of relying on fixed mockup dimensions.
 4. Test dense, empty, long-text, translated, and permission-reduced content.
 
+## Content Stress Layout
+
+Use realistic empty, dense, long translated, and restricted-permission variants. Specify minimum/maximum widths, wrapping, intrinsic height, alignment, and overflow. Distinguish deliberate scroll regions from accidental clipping; avoid fixed heights for variable text unless an accessible expansion behavior is defined.
+
 ## Decision Rules
 
 - If a layout needs arbitrary offsets for ordinary content, revise the structure.
 - If columns make reading or input cramped, change composition rather than shrinking text.
 
-## Validation
+## Output Contract
+
+Layout specification with grid, regions, alignment, sizing, overflow, and content stress cases.
+
+## Quality Gates
 
 - Does reading and focus order match visual order?
 - Can realistic content fit without overlap or hidden actions?
+- The layout preserves content and primary actions under each relevant stress case.
 
-## Common Failure Modes
+## Failure Modes
 
 - Perfect sample content hides overflow: stress-test real extremes.
 - Fixed heights clip text: define flexible sizing.
 
-## Escalation and Collaboration
+## Handoffs
 
 UX Designer approves grouping and task sequence; Frontend Engineer checks feasible layout rules.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

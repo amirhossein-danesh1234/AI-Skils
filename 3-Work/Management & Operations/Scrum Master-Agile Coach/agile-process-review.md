@@ -1,42 +1,24 @@
 # Agile Process Review
 
+Context: [Scrum Master-Agile Coach](README.md).
+
 ## Purpose
 
 Assess whether delivery practices improve flow, feedback, and team learning.
 
-## When to Use
+## Activate When
 
 Rituals or workflow rules create friction or fail to improve outcomes.
 
-## When Not to Use
+## Do Not Use When
 
 Do not enforce Scrum terminology when the team is not using Scrum.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Actual workflow, goals, observations, and current working agreements.
 
-Workflow, goals, delivery data, team observations, constraints, and current agreements.
-
-### Helpful
-
-Team working agreements, goals, backlog readiness, capacity, delivery observations, and impediment evidence.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Process assessment with bottlenecks, useful practices, waste, experiments, and expected outcomes.
-
-## Operating Principles
-
-Use Scrum commitments when the team actually uses Scrum; otherwise adapt flow practices openly. Do not present a hybrid process as strict Scrum.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Framework compliance matters only when the team claims that framework; useful flow improvements need no enterprise ceremony.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Identify overcommitment, handoff delay, unclear readiness, and blocked decisions.
 4. Propose small changes with measurable effects and review dates.
 
+## Process Value
+
+Tie each ritual or rule to feedback, coordination, risk reduction, or learning. Compare its cost with observed benefit and remove redundant reporting. Test one small change against flow and quality; do not respond to delay by automatically adding meetings or increasing velocity targets.
+
 ## Decision Rules
 
 - If a practice costs more than the coordination or learning it enables, simplify or remove it.
 - If a team claims Scrum, distinguish required Scrum elements from optional local practices.
 
-## Validation
+## Output Contract
+
+Process assessment with bottlenecks, useful practices, waste, experiments, and expected outcomes.
+
+## Quality Gates
 
 - Are recommendations tied to observed flow or learning problems?
 - Can the team run the proposed experiment within capacity?
+- A proposed practice addresses an observed mechanism and has a reviewable effect.
 
-## Common Failure Modes
+## Failure Modes
 
 - Framework purity replaces outcomes: test usefulness.
 - Process change ignores organizational constraint: escalate ownership.
 
-## Escalation and Collaboration
+## Handoffs
 
 Operations Manager handles recurring cross-team flow; Team Manager handles capacity; Product Manager handles value clarity.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

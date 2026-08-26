@@ -1,42 +1,24 @@
 # Visual Hierarchy
 
+Context: [UI Designer](README.md).
+
 ## Purpose
 
 Make the most important information and action visually apparent.
 
-## When to Use
+## Activate When
 
 Users miss priorities or a screen competes for attention.
 
-## When Not to Use
+## Do Not Use When
 
 Do not change task order or product priorities without UX and Product Manager agreement.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Primary task, approved content importance, and screen context.
 
-Approved content, primary task, current screen, brand constraints, and device contexts.
-
-### Helpful
-
-Approved flow, content, reference designs or brand constraints, existing tokens, components, and target devices.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Hierarchy specification with emphasis levels, grouping, primary action, and rationale.
-
-## Operating Principles
-
-Use consistent visual rules, measurable contrast and sizing checks, and realistic content; justify exceptions instead of adding arbitrary tokens.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Decoration and new brand choices can wait; priority cannot be inferred from stakeholder enthusiasm.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Use position, spacing, size, weight, and contrast coherently; avoid relying only on color.
 4. Check the screen at small size, with long content, and without decorative imagery.
 
+## Attention Walk
+
+Identify what the user must notice first, understand next, and act on. Use size, placement, spacing, and contrast coherently; test without imagery and color. A warning or completion state must remain recognizable even when promotional content competes for attention.
+
 ## Decision Rules
 
 - If several actions look primary, choose one per meaningful decision context.
 - If emphasis obscures essential warnings or status, rebalance it.
 
-## Validation
+## Output Contract
+
+Hierarchy specification with emphasis levels, grouping, primary action, and rationale.
+
+## Quality Gates
 
 - Can a viewer identify the primary task and current state quickly?
 - Does emphasis remain understandable without color alone?
+- A viewer can identify the primary action and current state without explanatory narration.
 
-## Common Failure Modes
+## Failure Modes
 
 - Everything bold: create differentiated levels.
 - Promotional content outranks task needs: restore functional priority.
 
-## Escalation and Collaboration
+## Handoffs
 
 UX Designer confirms task importance; Frontend Engineer verifies rendered hierarchy.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

@@ -1,42 +1,24 @@
 # PRD Writing
 
+Context: [Product Manager](README.md).
+
 ## Purpose
 
 Produce an implementation-ready product requirements document with traceable decisions.
 
-## When to Use
+## Activate When
 
 An accepted feature or product increment needs a shared specification for design, engineering, and QA.
 
-## When Not to Use
+## Do Not Use When
 
 Do not use a PRD to manufacture evidence, approve unresolved policies, or replace technical design.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Accepted problem/feature intent, current behavior, and sources of approved policy.
 
-Accepted problem and feature brief, users, rules, constraints, stakeholders, and known dependencies.
-
-### Helpful
-
-User segment and scenario, evidence, business objective, constraints, current behavior, relevant policies, and decision owner.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-PRD covering goal, evidence, users, scenarios, scope, rules, states, errors, requirements, acceptance, measurement, risks, and open decisions.
-
-## Operating Principles
-
-Maintain traceability from problem to scope to acceptance. Reject weak requests with reasons and a better alternative; distinguish useful outcomes from shipped output.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Unknowns may remain with owners and affected slices; detailed design and exact estimates belong to specialists.
 
 ## Workflow
 
@@ -60,27 +42,30 @@ Use the following content contract; combine sections only when their meaning rem
 
 Walk at least one normal scenario, one denied action, and one interrupted or repeated action from user intent through authoritative state and feedback. A polished document is not ready if implementation requires guessing policy. Mark independently ready slices separately from blocked slices; avoid blocking unrelated work for an optional detail.
 
+## Readiness Is Slice-Specific
+
+Use a requirement-to-scenario-to-acceptance crosswalk to detect orphaned requirements and uncovered scenarios. Distinguish discovery-ready, design-ready, implementation-ready, and release-ready rather than stamping the entire document approved. Walk a permission change during an in-flight action when access or money is involved.
+
 ## Decision Rules
 
 - If a rule affects money, permissions, data retention, or legal obligations, require an explicit owner decision.
 - If the team is small and scope narrow, use a compact PRD but retain states, acceptance, and open decisions.
 
-## Validation
+## Output Contract
+
+PRD covering goal, evidence, users, scenarios, scope, rules, states, errors, requirements, acceptance, measurement, risks, and open decisions.
+
+## Quality Gates
 
 - Can QA derive tests and engineering identify contracts without guessing product behavior?
 - Does each requirement support an in-scope scenario and each acceptance criterion trace to a requirement?
+- An implementer can identify the exact ready slice without guessing any consequential rule.
 
-## Common Failure Modes
+## Failure Modes
 
 - Long prose hides ambiguity: use explicit rules and identifiers.
 - PRD claims readiness with unowned blockers: separate ready scope from unresolved scope.
 
-## Escalation and Collaboration
+## Handoffs
 
 UX Designer validates flows; engineering checks feasibility; Security and Financial Analyst join only for material exposure; QA tests the specification.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

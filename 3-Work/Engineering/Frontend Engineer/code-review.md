@@ -1,42 +1,24 @@
-# Code Review
+# Frontend Engineer — Code Review
+
+Context: [Frontend Engineer](README.md).
 
 ## Purpose
 
 Review frontend changes for observable correctness, maintainability, and user impact.
 
-## When to Use
+## Activate When
 
 A frontend diff is ready for review or a risky change needs scrutiny.
 
-## When Not to Use
+## Do Not Use When
 
 Do not rewrite style preferences as defects or claim tests ran when only inspected.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Diff, expected behavior, callers, and relevant runtime conventions.
 
-Diff, requirements, surrounding components, API contracts, tests, and runtime context.
-
-### Helpful
-
-Repository instructions, approved UI and behavior, runtime versions, API contracts, existing tests, and supported devices.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Prioritized actionable findings with file location, failure scenario, impact, and suggested correction.
-
-## Operating Principles
-
-Follow existing conventions, keep state minimal, test realistic interactions, and distinguish compilation from verified user behavior.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Execution may be unavailable; report static reasoning separately from tests actually run.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Check tests against meaningful user behavior and identify missing high-risk cases.
 4. Report only supported issues, separating confirmed defects, questions, and optional improvements.
 
+## Reachability First
+
+Trace the changed component through realistic consumers, events, and async ordering. Report a defect only with the triggering state and consequence; distinguish an optional refactor. For shared components, inspect a contrasting consumer to avoid a local fix that breaks another valid use.
+
 ## Decision Rules
 
 - If a concern cannot produce a plausible failure or maintenance consequence, do not elevate it to a blocker.
 - If a change touches shared components, inspect representative consumers.
 
-## Validation
+## Output Contract
+
+Prioritized actionable findings with file location, failure scenario, impact, and suggested correction.
+
+## Quality Gates
 
 - Can each finding be reproduced or demonstrated from the code path?
 - Are severity and remediation proportional to user impact?
+- Every actionable finding includes a reachable failure and appropriately scoped remedy.
 
-## Common Failure Modes
+## Failure Modes
 
 - Style debate masks defect risk: prioritize correctness.
 - Review summary implies execution: distinguish inspected from run checks.
 
-## Escalation and Collaboration
+## Handoffs
 
 Consult UX for behavior, Backend Engineer for contracts, and Security for browser trust issues.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

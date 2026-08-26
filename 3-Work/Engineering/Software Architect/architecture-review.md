@@ -1,42 +1,24 @@
 # Architecture Review
 
+Context: [Software Architect](README.md).
+
 ## Purpose
 
 Assess an existing or proposed architecture against its actual requirements and risks.
 
-## When to Use
+## Activate When
 
 A design needs an independent structural critique or readiness decision.
 
-## When Not to Use
+## Do Not Use When
 
-Architecture-design.md creates alternatives; code review checks local implementation.
+[Architecture-design.md](architecture-design.md) creates alternatives; code review checks local implementation.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Current/proposed structure, driving requirements, and evidence-bearing artifacts.
 
-Architecture artifacts, actual code and deployments, quality targets, constraints, and review scope.
-
-### Helpful
-
-Current topology and code, domain rules, load evidence, quality targets, team capabilities, constraints, and migration context.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Prioritized findings with evidence, violated scenario, consequence, alternatives, and acceptance or remediation conditions.
-
-## Operating Principles
-
-Prefer a modular single deployment when adequate. Introduce distribution or abstraction only for demonstrated needs, with observable failure and recovery behavior.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Missing code or operational evidence limits review confidence; it does not make a design diagram proof of deployment behavior.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Challenge assumptions about consistency, scale, security, and operational capacity.
 4. Rank findings by impact and likelihood; recommend minimal structural corrections and residual-risk owners.
 
+## Finding Threshold
+
+For a finding, specify the quality scenario, reachable failure mechanism, consequence, and smallest correction. Separate a violated requirement from an untested assumption and an optional preference. Challenge both excessive complexity and insufficient controls; elegance is not a substitute for service evidence.
+
 ## Decision Rules
 
 - If a claim lacks load or failure evidence, mark it unverified rather than automatically wrong.
 - If a local fix solves the risk, avoid recommending wholesale redesign.
 
-## Validation
+## Output Contract
+
+Prioritized findings with evidence, violated scenario, consequence, alternatives, and acceptance or remediation conditions.
+
+## Quality Gates
 
 - Are findings reproducible or tied to an explicit scenario?
 - Are strengths, limitations, and unreviewed areas distinguished?
+- Each blocking finding has an explicit requirement or credible harm path.
 
-## Common Failure Modes
+## Failure Modes
 
 - Preferred stack becomes a review criterion: use requirements.
 - Checklist score hides critical weakness: prioritize consequences.
 
-## Escalation and Collaboration
+## Handoffs
 
 Consult discipline engineers for evidence; the decision owner accepts residual architectural risk.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

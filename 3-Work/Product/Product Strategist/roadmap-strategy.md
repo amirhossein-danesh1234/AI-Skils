@@ -1,42 +1,24 @@
 # Roadmap Strategy
 
+Context: [Product Strategist](README.md).
+
 ## Purpose
 
 Sequence outcome bets so learning and dependencies shape product investment.
 
-## When to Use
+## Activate When
 
 A product direction needs a credible sequence of investment themes.
 
-## When Not to Use
+## Do Not Use When
 
-Project Manager owns delivery commitments; release-planning.md owns a bounded release.
+Project Manager owns delivery commitments; [release-planning.md](../Product%20Manager/release-planning.md) owns a bounded release.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Accepted direction, outcome bets, evidence dependencies, and capacity envelope.
 
-Accepted strategy, outcome bets, dependencies, capacity constraints, and evidence maturity.
-
-### Helpful
-
-Customer evidence, company constraints, alternatives, current product performance, market context, and strategic horizon.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Outcome roadmap with horizon, confidence, dependencies, learning gates, and explicit non-commitments.
-
-## Operating Principles
-
-Vision describes the desired future; strategy chooses a path; roadmap sequences outcome bets. Evidence of demand is not proof of durable product-market fit.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Distant dates should remain horizons; only authorized delivery commitments get specific promised dates.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Group bets by outcome and confidence rather than presenting a feature wish list.
 4. Sequence near-term committed work separately from contingent options and define review triggers.
 
+## Learning Sequence
+
+Place assumption-breaking tests before dependent implementation. Distinguish outcomes to learn, capabilities to enable, and releases already committed. If a delayed experiment invalidates later bets, show the branch in the roadmap instead of keeping a fixed feature sequence.
+
 ## Decision Rules
 
 - If a later bet depends on an untested assumption, schedule validation before committing its implementation.
 - If dates are externally committed, obtain delivery feasibility rather than estimating from strategic desirability.
 
-## Validation
+## Output Contract
+
+Outcome roadmap with horizon, confidence, dependencies, learning gates, and explicit non-commitments.
+
+## Quality Gates
 
 - Are time horizons and confidence clearly distinguished from promised dates?
 - Does every theme have an outcome and a reason for its sequence?
+- A failed early gate can change or remove later investment rather than merely shift dates.
 
-## Common Failure Modes
+## Failure Modes
 
 - Roadmap as fixed contract: label conditional items and review triggers.
 - All priorities simultaneous: expose capacity trade-offs.
 
-## Escalation and Collaboration
+## Handoffs
 
 Product Manager scopes increments; Project Manager validates capacity and dependencies; Product Analyst defines outcome signals.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

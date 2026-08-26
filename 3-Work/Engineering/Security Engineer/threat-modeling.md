@@ -1,42 +1,24 @@
 # Threat Modeling
 
+Context: [Security Engineer](README.md).
+
 ## Purpose
 
 Identify credible abuse paths and controls around a defined system and its trust boundaries.
 
-## When to Use
+## Activate When
 
 A new design, sensitive feature, or architectural change alters security exposure.
 
-## When Not to Use
+## Do Not Use When
 
 Do not substitute a generic threat list for system understanding or claim this replaces penetration testing.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Actual system scope, valuable assets, actors, flows, and trust boundaries.
 
-System scope, assets, actors, data flows, trust boundaries, existing controls, and risk owner.
-
-### Helpful
-
-Architecture and code, data classification, actors, trust boundaries, exposure, existing controls, and authorized test scope.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Threat model with asset/actor/boundary map, abuse scenarios, likelihood, impact, mitigations, residual risk, and tests.
-
-## Operating Principles
-
-Separate confirmed vulnerability from suspected weakness; prioritize reachable impact and never include usable secrets or unnecessary exploit detail in public artifacts.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Likelihood can be qualitative with rationale; invented numerical probabilities are not needed.
 
 ## Workflow
 
@@ -58,27 +40,30 @@ For every mitigation, explain which step of the path it prevents, detects, limit
 
 Review the model with implementation and operational owners, then assign tests and residual-risk decisions. Keep a version or trigger for updates when assets, identities, dependencies, or deployment exposure change. [OWASP’s threat-modeling guidance](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html) provides a useful process reference; it is not a substitute for system-specific evidence.
 
+## Control Challenge
+
+For a material threat, construct the shortest plausible abuse sequence and identify the exact step each control interrupts. Test control outage, alternate entry, and excessive privilege. For AI features, include retrieved/tool content crossing into action selection and request AI Engineer’s concrete pipeline evidence.
+
 ## Decision Rules
 
 - If an attack requires an impossible precondition, lower or reject it with evidence rather than copying a category.
 - If impact is severe and uncertainty material, investigate or contain exposure before accepting the design.
 
-## Validation
+## Output Contract
+
+Threat model with asset/actor/boundary map, abuse scenarios, likelihood, impact, mitigations, residual risk, and tests.
+
+## Quality Gates
 
 - Does every important trust boundary have relevant abuse analysis?
 - Can each mitigation be tested and is remaining risk assigned to an actual owner?
+- Every prioritized threat has a feasible verification and a named residual-risk decision owner.
 
-## Common Failure Modes
+## Failure Modes
 
 - Framework categories become threats: write concrete attack paths.
 - Mitigation list without evidence: specify how each control interrupts the path.
 
-## Escalation and Collaboration
+## Handoffs
 
 Architect validates flows; Backend and DevOps implement controls; Database Engineer checks integrity; QA derives abuse tests.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

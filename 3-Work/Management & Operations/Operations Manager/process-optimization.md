@@ -1,42 +1,24 @@
 # Process Optimization
 
+Context: [Operations Manager](README.md).
+
 ## Purpose
 
 Improve a validated process through measured, reversible changes.
 
-## When to Use
+## Activate When
 
 An observed process problem has enough evidence for intervention.
 
-## When Not to Use
+## Do Not Use When
 
 Do not automate or redesign based only on an attractive diagram.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Validated current flow, observed problem, baseline, and change scope.
 
-Baseline flow, problem evidence, customer outcome, constraints, and improvement authority.
-
-### Helpful
-
-Actual work samples, process boundaries, volumes, timing, defects, roles, tools, and service expectations.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Improvement experiment with hypothesis, change, owner, baseline, guardrails, results, and adoption decision.
-
-## Operating Principles
-
-Improve end-to-end flow and quality, not one team’s utilization at the expense of downstream queues.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** No broad redesign is needed when a local controlled experiment can test the constraint.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Pilot a bounded change while preserving quality and compliance controls.
 4. Measure end-to-end effect, unintended consequences, and sustainability before wider adoption.
 
+## Net Improvement
+
+Predict the end-to-end effect and quality guardrail before changing the process. Compare representative demand and case mix before/after; include implementation, monitoring, and maintenance burden. A faster local step that increases downstream rework may be a loss, not an efficiency gain.
+
 ## Decision Rules
 
 - If improvement raises output but worsens defects or downstream delay, evaluate the net outcome.
 - If evidence is noisy, extend observation or redesign the test rather than claim success.
 
-## Validation
+## Output Contract
+
+Improvement experiment with hypothesis, change, owner, baseline, guardrails, results, and adoption decision.
+
+## Quality Gates
 
 - Are baseline and post-change conditions comparable?
 - Does the benefit exceed implementation and maintenance burden?
+- Measured benefit survives relevant case-mix and downstream-effect checks.
 
-## Common Failure Modes
+## Failure Modes
 
 - Local time saved counted as business value: inspect downstream effect.
 - One good day proves improvement: observe representative variation.
 
-## Escalation and Collaboration
+## Handoffs
 
-Bottleneck-analysis.md identifies constraints; Team Manager supports role changes; Financial Analyst tests economic benefit.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.
+[Bottleneck-analysis.md](bottleneck-analysis.md) identifies constraints; Team Manager supports role changes; Financial Analyst tests economic benefit.

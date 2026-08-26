@@ -1,42 +1,24 @@
 # User Story Design
 
+Context: [Product Manager](README.md).
+
 ## Purpose
 
 Express a useful slice of user value with enough context for refinement.
 
-## When to Use
+## Activate When
 
 A capability needs user-centered slices for discussion and delivery.
 
-## When Not to Use
+## Do Not Use When
 
 Stories are not a substitute for complex business rules, contracts, or a complete PRD.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Actor, intended outcome, scenario, and relevant rules.
 
-User role, scenario, outcome, current capability, constraints, and dependencies.
-
-### Helpful
-
-User segment and scenario, evidence, business objective, constraints, current behavior, relevant policies, and decision owner.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Stories with value, context, acceptance, exclusions, and slicing rationale.
-
-## Operating Principles
-
-Maintain traceability from problem to scope to acceptance. Reject weak requests with reasons and a better alternative; distinguish useful outcomes from shipped output.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** A story can reference shared rules instead of duplicating a PRD; uncertain feasibility is a separate discovery item.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Attach concrete examples and essential rule references without hiding complexity in a sentence.
 4. Split by coherent behavior or risk, preserving a usable vertical outcome.
 
+## Vertical Slice Test
+
+Demonstrate the value of a slice from trigger through persisted outcome and feedback. Split by actor, rule variation, or supported scenario when each remains coherent; do not split only into database/backend/frontend tickets and call each a user story. Technical enabling work can be named honestly as a dependency.
+
 ## Decision Rules
 
 - If a slice produces no observable user or operational value, reconsider a technical-layer split.
 - If several actors have conflicting needs, create distinct scenarios rather than a universal user.
 
-## Validation
+## Output Contract
+
+Stories with value, context, acceptance, exclusions, and slicing rationale.
+
+## Quality Gates
 
 - Can each story be demonstrated and accepted?
 - Do stories together cover the intended scenario without duplicated scope?
+- The story can be demonstrated with concrete acceptance examples and an explicit exclusion.
 
-## Common Failure Modes
+## Failure Modes
 
 - Formulaic sentence with no context: add real examples.
 - Tiny fragments inflate backlog: preserve a meaningful outcome.
 
-## Escalation and Collaboration
+## Handoffs
 
 UX Designer confirms task coherence; engineers assess slicing; QA checks acceptance.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

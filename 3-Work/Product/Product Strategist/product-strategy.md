@@ -1,42 +1,24 @@
 # Product Strategy
 
+Context: [Product Strategist](README.md).
+
 ## Purpose
 
 Choose a coherent customer, value, advantage, and investment path for a product.
 
-## When to Use
+## Activate When
 
 The team must choose among markets, customer problems, or competing product bets.
 
-## When Not to Use
+## Do Not Use When
 
 Vision sets destination; roadmap sequences bets; this skill does not specify feature acceptance or delivery dates.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Customer evidence, current constraints, alternatives, and decision horizon.
 
-Customer evidence, market alternatives, capabilities, economics, constraints, and decision horizon.
-
-### Helpful
-
-Customer evidence, company constraints, alternatives, current product performance, market context, and strategic horizon.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Strategic diagnosis, target segment, value proposition, advantage, explicit choices, rejected alternatives, bets, and review triggers.
-
-## Operating Principles
-
-Vision describes the desired future; strategy chooses a path; roadmap sequences outcome bets. Evidence of demand is not proof of durable product-market fit.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Exact delivery dates belong to Project Manager; material untested strategy links remain staged bets.
 
 ## Workflow
 
@@ -54,29 +36,32 @@ For every major choice, record the rejected alternative and the resource or oppo
 
 For each bet, define the evidence needed, cheapest discriminating test, maximum commitment before review, and a result that would cause stop, narrow, or redirect. A test that can only confirm the preferred idea is not a useful gate. Avoid manufacturing numeric thresholds; obtain the owner’s risk tolerance or label a proposed threshold for approval.
 
-The final recommendation should explain both why this path is attractive and why it is feasible now. Route cash-model validation to Financial Analyst, company-wide resource trade-offs to Business Strategist and the actual executive owner, and implementation-ready scope to Product Manager. Do not relabel a feature list as strategic choices.
+The final recommendation should explain both why this path is attractive and why it is feasible now. Route cash-model validation to Financial Analyst, company-wide resource trade-offs to Founder Advisor and the actual executive owner, and implementation-ready scope to Product Manager. Do not relabel a feature list as strategic choices.
+
+## Product Envelope
+
+Make the target customer and advantage choices within the company resource envelope. A strategy requiring a new company-level commitment must return to Founder Advisor, not silently enlarge that envelope. For a small team, one coherent wedge and a few falsifiable bets can be sufficient.
 
 ## Decision Rules
 
 - If the advantage depends on a capability the team cannot build or access, redesign or defer the strategy.
 - If uncertainty is high and commitment is reversible, favor a bounded test; do not disguise a test as a scale commitment.
 
-## Validation
+## Output Contract
+
+Strategic diagnosis, target segment, value proposition, advantage, explicit choices, rejected alternatives, bets, and review triggers.
+
+## Quality Gates
 
 - Do target customer, proposition, channels, capability, and economics reinforce each other?
 - Would contrary evidence or a failed test change the recommendation?
+- The strategy can reject an attractive off-direction feature and names the evidence that would change direction.
 
-## Common Failure Modes
+## Failure Modes
 
 - Initiative list labeled strategy: state the choice and what it excludes.
 - Market size substituted for demand: require behavior or direct customer evidence.
 
-## Escalation and Collaboration
+## Handoffs
 
-Use Market Researcher for evidence, Financial Analyst for economics, Business Strategist for company fit, and the executive owner for capital approval.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.
+Market Researcher supplies evidence, Financial Analyst validates economics, Business Strategist checks the economic path, and Founder Advisor assesses company resource changes for executive approval.

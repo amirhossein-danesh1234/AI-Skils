@@ -1,42 +1,24 @@
 # Import Export Analysis
 
+Context: [Commercial-Trade Specialist](README.md).
+
 ## Purpose
 
 Assess whether a proposed cross-border trade is feasible and what must be verified.
 
-## When to Use
+## Activate When
 
 A new product, route, or jurisdiction creates trade uncertainty.
 
-## When Not to Use
+## Do Not Use When
 
 Do not issue definitive tariff, sanctions, licensing, or legal conclusions without current authoritative confirmation.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Exact goods, parties, origin/destination, end use, route, and transaction date.
 
-Product description, classification evidence, origin, destination, parties, end use, route, and planned date.
-
-### Helpful
-
-Product specifications, quantities, route, jurisdictions, supplier evidence, quote currency and validity, payment terms, and delivery-term version.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Feasibility assessment with classification questions, restrictions, documents, costs, verification sources, and go/hold conditions.
-
-## Operating Principles
-
-Reconcile price, freight, insurance, duties, taxes, lead times, quality, and working capital. Delivery terms do not automatically settle title or payment.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Unknown classification or restricted status blocks affected commitments; generic country information is insufficient.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Map documentation, clearance responsibilities, duties, taxes, and lead times.
 4. Separate confirmed requirements from unresolved specialist questions before commercial commitment.
 
+## Transaction Verification
+
+Use current official sources and qualified brokers/legal support for the specific classification, licenses, standards, restrictions, and duties. Record what is confirmed, conditional, or unresolved and when it must be rechecked. Do not suggest routing or relabeling to evade a restriction.
+
 ## Decision Rules
 
 - If classification or restricted-party status is unresolved, hold affected commitments and seek qualified review.
 - If a rule is time-sensitive, record source and retrieval date and recheck before execution.
 
-## Validation
+## Output Contract
+
+Feasibility assessment with classification questions, restrictions, documents, costs, verification sources, and go/hold conditions.
+
+## Quality Gates
 
 - Are jurisdiction, product, and transaction details precise enough for the conclusion?
 - Are assumptions and required professional confirmations visible?
+- The feasibility conclusion applies to the actual transaction and lists unresolved go/hold gates.
 
-## Common Failure Modes
+## Failure Modes
 
 - Generic country advice replaces transaction analysis: inspect exact parties and goods.
 - Old rules reused: verify current authority.
 
-## Escalation and Collaboration
+## Handoffs
 
 Customs broker and legal/compliance specialists confirm requirements; Financial Analyst evaluates cost and cash exposure.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

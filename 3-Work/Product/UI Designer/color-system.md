@@ -1,42 +1,24 @@
 # Color System
 
+Context: [UI Designer](README.md).
+
 ## Purpose
 
 Define semantic color roles with accessible and consistent state communication.
 
-## When to Use
+## Activate When
 
 Colors are inconsistent or state meaning relies on arbitrary hues.
 
-## When Not to Use
+## Do Not Use When
 
 Do not claim accessibility from palette selection alone or change brand without approval.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Existing palette or explicit design mandate, semantic states, foreground/background uses, and target accessibility needs.
 
-Brand palette, backgrounds, text roles, states, themes, and accessibility target.
-
-### Helpful
-
-Approved flow, content, reference designs or brand constraints, existing tokens, components, and target devices.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Semantic tokens, contrast evidence, state mappings, theme behavior, and non-color cues.
-
-## Operating Principles
-
-Use consistent visual rules, measurable contrast and sizing checks, and realistic content; justify exceptions instead of adding arbitrary tokens.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Without a brand palette, propose a labeled provisional system; conformance needs rendered-state checks.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Check relevant contrast requirements in real states including disabled, focus, and selected variants.
 4. Pair status color with text, icon, or structure and test theme and image-background cases.
 
+## Color Pair Ledger
+
+Record token role, foreground/background pair, theme, state, measured contrast, and non-color cue. Check error and focus colors against adjacent surfaces, not only against white. Distinguish accessibility requirements for active controls from applicable exceptions; do not claim every disabled control has the same contrast obligation.
+
 ## Decision Rules
 
 - If a brand color fails a required contrast use, adjust its role or use an approved variant.
 - If color is the only signal, add a second cue.
 
-## Validation
+## Output Contract
+
+Semantic tokens, contrast evidence, state mappings, theme behavior, and non-color cues.
+
+## Quality Gates
 
 - Are critical text and control pairs checked against the chosen accessibility target?
 - Do themes preserve meaning and contrast?
+- Status remains understandable in monochrome and contrast is measured on actual pairings.
 
-## Common Failure Modes
+## Failure Modes
 
 - Palette swatches mistaken for UI contrast: test actual pairs.
 - Red/green alone communicates status: add labels or symbols.
 
-## Escalation and Collaboration
+## Handoffs
 
 Frontend Engineer verifies rendered contrast; UX Designer confirms status meaning; use current W3C guidance for specific criteria.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

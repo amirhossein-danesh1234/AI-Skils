@@ -1,42 +1,24 @@
 # Transaction Design
 
+Context: [Database Engineer](README.md).
+
 ## Purpose
 
 Choose transaction boundaries and concurrency controls that preserve business invariants.
 
-## When to Use
+## Activate When
 
 Concurrent operations, repeated requests, or partial writes can produce invalid state.
 
-## When Not to Use
+## Do Not Use When
 
 Do not assume a transaction alone prevents every race or hold locks across slow remote calls.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Invariant, conflicting writers, engine semantics, and side-effect boundaries.
 
-Invariants, concurrent actors, engine/version, isolation behavior, write sets, and retry semantics.
-
-### Helpful
-
-Database engine/version, schema, constraints, workload evidence, volumes, retention needs, and recovery objectives.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Transaction protocol with boundaries, isolation, locking or version checks, retries, idempotency, and race tests.
-
-## Operating Principles
-
-Design from invariants and access patterns; verify query semantics separately from speed and migration safety separately from syntax.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Choose a mechanism after constructing the race; stronger isolation is not automatically the cheapest correct control.
 
 ## Workflow
 
@@ -57,27 +39,30 @@ Test with controlled interleavings, not just many simultaneous requests and hope
 
 Reference for one engine’s semantics: [PostgreSQL transaction isolation](https://www.postgresql.org/docs/current/transaction-iso.html). Resolve the documentation to the installed version before applying details.
 
+## Controlled Interleavings
+
+Use barriers or explicit schedules to force the violating read/write order. Check both successful and rejected outcomes, deadlock/serialization retries, and lock ordering. For predicate invariants, test rows that do not yet exist; locking a current row may not protect a future insertion.
+
 ## Decision Rules
 
 - If serialization failure requires retry, retry the complete transaction with bounded attempts and safe side effects.
 - If a remote effect cannot be atomic with the database, use a durable handoff or reconciliation design.
 
-## Validation
+## Output Contract
+
+Transaction protocol with boundaries, isolation, locking or version checks, retries, idempotency, and race tests.
+
+## Quality Gates
 
 - Do concurrent tests preserve the invariant under the targeted interleavings?
 - Are deadlock handling, lock duration, and duplicate side effects bounded?
+- The selected protection addresses the demonstrated race and retries do not repeat external effects.
 
-## Common Failure Modes
+## Failure Modes
 
 - Check then write outside protection: enforce atomically.
 - Only happy-path tests: simulate races and partial failure.
 
-## Escalation and Collaboration
+## Handoffs
 
 Backend Engineer owns business behavior; Software Architect resolves cross-system consistency; DevOps verifies engine settings.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

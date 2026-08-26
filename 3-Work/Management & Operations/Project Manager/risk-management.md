@@ -1,42 +1,24 @@
 # Risk Management
 
+Context: [Project Manager](README.md).
+
 ## Purpose
 
 Manage project uncertainty through triggers, responses, and accountable follow-up.
 
-## When to Use
+## Activate When
 
 A project needs risk planning or a new threat emerges.
 
-## When Not to Use
+## Do Not Use When
 
 Do not confuse an existing issue with a future risk or create a register nobody uses.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Project outcome, plan, exposures, evidence, and accountable owners.
 
-Project objectives, plan, dependencies, evidence, risk tolerance, and owners.
-
-### Helpful
-
-Approved scope, acceptance conditions, owners, estimates, calendars, dependencies, capacity, risks, and deadline basis.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Risk register with cause-event-impact, likelihood rationale, response, trigger, owner, and residual exposure.
-
-## Operating Principles
-
-Report forecast and evidence, not optimistic status colors; change commitments explicitly when assumptions fail.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Qualitative likelihood is acceptable; responses still need capacity and authority.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Choose avoidance, mitigation, contingency, transfer, or acceptance with authority.
 4. Review triggers and convert realized risks into managed issues with recovery actions.
 
+## Risk to Issue
+
+Record cause-event-impact, early trigger, preventive action, contingency, and latest response time. When the event happens, move from watching probability to managing the actual issue and reforecasting. Include mitigation effort in the schedule and test common causes affecting multiple risks.
+
 ## Decision Rules
 
 - If a risk threatens a committed milestone, prepare a contingency before the trigger.
 - If mitigation consumes capacity, include it in the plan.
 
-## Validation
+## Output Contract
+
+Risk register with cause-event-impact, likelihood rationale, response, trigger, owner, and residual exposure.
+
+## Quality Gates
 
 - Are responses funded, feasible, and owned?
 - Do risk updates change planning decisions?
+- The register changes delivery decisions and does not hide unfunded mitigation work.
 
-## Common Failure Modes
+## Failure Modes
 
 - Heatmap becomes ceremony: tie to actions.
 - Mitigation effort omitted from schedule: account for it.
 
-## Escalation and Collaboration
+## Handoffs
 
 Specialists assess technical/commercial risks; sponsor accepts material residual exposure.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

@@ -1,42 +1,24 @@
 # Feedback
 
+Context: [Team Manager](README.md).
+
 ## Purpose
 
 Give specific, respectful feedback that enables a useful behavior change.
 
-## When to Use
+## Activate When
 
 A concrete behavior or result should be reinforced or corrected.
 
-## When Not to Use
+## Do Not Use When
 
 Do not use feedback to diagnose motives, shame publicly, or bypass formal policy for serious issues.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Observed behavior, impact, relevant expectation, and conversational context.
 
-Observed event, impact, relevant expectation, context, and relationship.
-
-### Helpful
-
-Role expectations, observed work, capacity, skills, commitments, organizational policy, and relevant employee context with privacy safeguards.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Feedback conversation or draft with observation, impact, expectation, invitation for context, and next step.
-
-## Operating Principles
-
-Use observable evidence, consistent criteria, and private respectful feedback; do not equate busyness, meeting attendance, or story points with performance.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Hearsay or inferred motive is not a fact; verify or ask a neutral question.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Explain impact and desired future behavior, then invite the person’s perspective.
 4. Agree support or action and follow up proportionately.
 
+## Behavioral Conversation
+
+Use a concrete observation and its consequence, state the desired future behavior, and invite missing context. Revise the assessment if the context changes it. Keep sensitive feedback private and separate a supportive conversation from formal discipline, which follows authorized policy.
+
 ## Decision Rules
 
 - If evidence is hearsay, verify or frame it as a question rather than an accusation.
 - If the concern involves harassment or safety, route through appropriate procedures.
 
-## Validation
+## Output Contract
+
+Feedback conversation or draft with observation, impact, expectation, invitation for context, and next step.
+
+## Quality Gates
 
 - Can the recipient understand what to repeat or change?
 - Does the wording avoid labels and unsupported motive claims?
+- The recipient can identify what to repeat/change and what support or next step is agreed.
 
-## Common Failure Modes
+## Failure Modes
 
 - Vague criticism: use a concrete example.
 - Feedback without listening: allow context to change the assessment.
 
-## Escalation and Collaboration
+## Handoffs
 
-Performance-review.md handles broader patterns; HR handles serious policy matters.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.
+[Performance-review.md](performance-review.md) handles broader patterns; HR handles serious policy matters.

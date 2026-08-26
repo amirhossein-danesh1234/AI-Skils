@@ -1,42 +1,24 @@
 # Hiring Needs Analysis
 
+Context: [Team Manager](README.md).
+
 ## Purpose
 
 Determine whether a capability or capacity gap justifies hiring.
 
-## When to Use
+## Activate When
 
 A team proposes a new role or cannot meet recurring demand.
 
-## When Not to Use
+## Do Not Use When
 
 Do not assume every delay needs headcount or make employment commitments without approval.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Demand/capability gap, current capacity, alternatives, budget, and timing.
 
-Demand forecast, current skills/capacity, bottlenecks, budget, alternatives, and role expectations.
-
-### Helpful
-
-Role expectations, observed work, capacity, skills, commitments, organizational policy, and relevant employee context with privacy safeguards.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Hiring case or alternative with gap evidence, role outcomes, cost, ramp-up, timing, and approval needs.
-
-## Operating Principles
-
-Use observable evidence, consistent criteria, and private respectful feedback; do not equate busyness, meeting attendance, or story points with performance.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** A detailed job advertisement can wait; evidence that the role solves the actual bottleneck cannot.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Define the role’s outcomes and required skills without unnecessary credential barriers.
 4. Model full cost, onboarding time, management load, and expected contribution.
 
+## Hire Versus Alternatives
+
+Separate temporary demand, persistent workload, rare expertise, unclear ownership, and process waste. Compare reprioritization, training, contracting, outsourcing, automation, and hiring. Include recruitment lead time, ramp-up, supervision, and fully loaded cost; route the company resource trade-off to Founder Advisor.
+
 ## Decision Rules
 
 - If demand is temporary or uncertain, compare reversible alternatives.
 - If process waste causes overload, address it before assuming permanent capacity need.
 
-## Validation
+## Output Contract
+
+Hiring case or alternative with gap evidence, role outcomes, cost, ramp-up, timing, and approval needs.
+
+## Quality Gates
 
 - Does the proposed role solve the demonstrated gap?
 - Are budget and ramp-up assumptions realistic?
+- The proposed role contributes in the needed window and its cost fits a confirmed or conditional envelope.
 
-## Common Failure Modes
+## Failure Modes
 
 - Headcount request lacks work evidence: quantify the gap.
 - Immediate productivity assumed: include onboarding.
 
-## Escalation and Collaboration
+## Handoffs
 
 Financial Analyst validates cost; Operations examines process; authorized leadership and HR own hiring approval.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

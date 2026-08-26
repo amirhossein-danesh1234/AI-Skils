@@ -1,42 +1,24 @@
 # Backup Recovery
 
+Context: [DevOps-Infrastructure Engineer](README.md).
+
 ## Purpose
 
 Prove that required data and service state can be recovered within agreed objectives.
 
-## When to Use
+## Activate When
 
 A system needs backup design or recoverability evidence.
 
-## When Not to Use
+## Do Not Use When
 
 A successful backup job is not proof of successful restoration.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Recovery state inventory, recovery objectives, backup identity, and isolated test target.
 
-Data inventory, consistency needs, recovery point/time objectives, dependencies, and authorized test environment.
-
-### Helpful
-
-Actual infrastructure and listeners, release process, identities, dependencies, service objectives, secrets handling, and current incident state.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Backup and restore plan with retention, encryption, access, consistency, rehearsal results, and gaps.
-
-## Operating Principles
-
-Inspect before mutation; use immutable or traceable releases, least privilege, explicit stop conditions, and real service checks.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** Without owner-set objectives, report measured capability only; no destructive restore on a guessed target.
 
 ## Workflow
 
@@ -61,28 +43,31 @@ Restoring local state does not reverse effects already accepted by another syste
 
 Record evidence that the rehearsal caused no live external effects and that the resumption gate distinguishes local consistency from cross-system reconciliation.
 
+## Recovery Dependency Order
+
+Restore required keys/configuration and compatible services in dependency order. Validate domain totals at the selected recovery point, then test the real operation with outbound effects contained. Document when credentials, external status, or attachments are not covered by the backup and how that limits recovery.
+
 ## Decision Rules
 
 - If decryption keys share the same failure domain as backups, design independent recovery access.
 - If restore exceeds the target, change the recovery design rather than report backup success.
 
-## Validation
+## Output Contract
+
+Backup and restore plan with retention, encryption, access, consistency, rehearsal results, and gaps.
+
+## Quality Gates
 
 - Are measured recovery time and recovered point recorded?
 - Do restored data and application behavior reconcile with the intended state?
 - For systems with external side effects, were outbound effects contained and restored operations reconciled before replay was authorized?
+- The drill proves usable recovery and no live side effects, not merely successful extraction of files.
 
-## Common Failure Modes
+## Failure Modes
 
 - Backup files exist but are unusable: rehearse restore.
 - Restore overwrites live data: use explicit isolated targets and approval.
 
-## Escalation and Collaboration
+## Handoffs
 
 Database Engineer validates consistency; Security checks access and encryption; service owner approves recovery objectives.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.

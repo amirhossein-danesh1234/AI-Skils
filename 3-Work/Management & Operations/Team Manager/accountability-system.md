@@ -1,42 +1,24 @@
 # Accountability System
 
+Context: [Team Manager](README.md).
+
 ## Purpose
 
 Make commitments and decision ownership visible without unnecessary surveillance.
 
-## When to Use
+## Activate When
 
 Work falls between people or commitments lack follow-through.
 
-## When Not to Use
+## Do Not Use When
 
 Do not solve unclear responsibility by adding status meetings or punitive metrics.
 
-## Required Inputs
+## Required Context
 
-### Required
+**Needed:** Outcomes, actual decision rights, commitments, and current ownership gaps.
 
-Team outcomes, roles, commitments, decision rights, workflow, and existing review practices.
-
-### Helpful
-
-Role expectations, observed work, capacity, skills, commitments, organizational policy, and relevant employee context with privacy safeguards.
-
-### Optional
-
-Previous decisions, comparable cases, or preferred output format. Their absence must not block a bounded first pass.
-
-If a required fact is missing, identify which decision it affects. Continue with a labeled assumption only when the consequence is low risk and reversible; otherwise ask the smallest question needed. Do not invent project facts, approvals, measurements, or test results.
-
-## Output
-
-Accountability mechanism with owners, commitments, evidence, review cadence, escalation, and correction rules.
-
-## Operating Principles
-
-Use observable evidence, consistent criteria, and private respectful feedback; do not equate busyness, meeting attendance, or story points with performance.
-
-Separate verified facts, supplied information, external evidence, assumptions, estimates, inferences, opinions, and unknowns. Show the basis of consequential claims. Scale rigor to team capacity and risk; a framework is optional, and its limitations must be stated when used.
+**Can be deferred or bounded:** A large RACI matrix is optional; a small team often needs one clear owner and interface per outcome.
 
 ## Workflow
 
@@ -45,27 +27,30 @@ Separate verified facts, supplied information, external evidence, assumptions, e
 3. Choose lightweight visibility and review based on risk and work cadence.
 4. Define how missed commitments are surfaced, renegotiated, and learned from.
 
+## Authority Alignment
+
+For each missed handoff, distinguish no owner, insufficient authority, unavailable capacity, unclear acceptance, and poor follow-through. Design visibility only for decisions and risk. Define how commitments are renegotiated early without rewarding concealment or turning work tracking into surveillance.
+
 ## Decision Rules
 
 - If an owner cannot influence the outcome, change authority or dependency agreements.
 - If reporting adds little decision value, simplify it.
 
-## Validation
+## Output Contract
+
+Accountability mechanism with owners, commitments, evidence, review cadence, escalation, and correction rules.
+
+## Quality Gates
 
 - Can anyone identify the owner and current commitment?
 - Does the system distinguish systemic blockers from individual follow-through?
+- The accountable person can influence the outcome or has an effective escalation agreement.
 
-## Common Failure Modes
+## Failure Modes
 
 - Visibility becomes surveillance: collect only useful evidence.
 - Multiple accountable owners hide responsibility: clarify final decision rights.
 
-## Escalation and Collaboration
+## Handoffs
 
-Project Manager tracks delivery commitments; Operations Manager defines handoffs; role-definition.md clarifies authority.
-
-Do not perform external writes, production changes, purchases, disclosures, or commitments merely because this protocol recommends them. Confirm the actual task authorizes the action and stop at the boundary of that authority.
-
-## Completion Criteria
-
-The defined output answers the activation question; its decision rules and validation checks have been applied. Explicitly separate a proposal from an approved decision and a planned test from an observed result. Record the recommendation or changed artifact, the validation actually performed, remaining uncertainty, and the next action with an owner or proposed owner. Include priority, dependency, and definition of done when work remains. A blocked execution can produce a useful assessment, but it is not a completed implementation.
+Project Manager tracks delivery commitments; Operations Manager defines handoffs; [role-definition.md](role-definition.md) clarifies authority.
