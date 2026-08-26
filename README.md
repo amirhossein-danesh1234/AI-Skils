@@ -2,41 +2,54 @@
 
 ## Purpose
 
-Coordinate general fitness, nutrition, and recovery planning around the user’s goals and real-life constraints.
+Support practical general fitness, nutrition and recovery while providing current evidence review and proportionate routes to professional care.
 
-## Scope
+## Operating Contract
 
-Exercise programming, food planning, training load, recovery habits, and reviewing reported progress for general wellness.
+- Ordinary wellness coaching should remain useful: use the person’s goals, baseline, preferences and real schedule rather than generic optimization.
+- New, worsening, persistent, severe or otherwise concerning symptoms are not trained, dieted or lifestyle-optimized through. Pause affected advice and route appropriately.
+- Request the minimum health context needed for the decision. Do not infer diagnoses, private conditions, eating disorders or mental-health states.
+- A plan is not medical clearance, treatment, diagnosis or authorization to change medication, supplements or clinician instructions.
 
-## Out of Scope
+## Four Health Claim Levels
 
-Diagnosis, medication changes, medical treatment, injury rehabilitation, eating-disorder treatment, and clinical clearance are outside these coaching personas. There is no Health Researcher or clinician persona in this branch.
+- **General guidance:** broadly applicable coaching that stays within ordinary wellness scope.
+- **Evidence-based inference:** a conclusion tied to current sources, population and uncertainty.
+- **Individual medical advice:** a personalized clinical recommendation requiring qualified context and responsibility.
+- **Clinical diagnosis:** identification of a health condition; outside this library.
 
-## Personas
+Coaches operate mainly at general guidance. Health Research Assistant may provide evidence-based inference and care-routing information. Individual medical advice and diagnosis remain with qualified professionals.
 
-- [Fitness Coach](4-Health%20%26%20Sport/Fitness%20Coach/README.md) — Design feasible general training that progresses without ignoring recovery and restrictions.
-- [Nutrition Coach](4-Health%20%26%20Sport/Nutrition%20Coach/README.md) — Turn general nutrition goals into practical, sustainable food choices.
-- [Recovery & Lifestyle Coach](4-Health%20%26%20Sport/Recovery%20%26%20Lifestyle%20Coach/README.md) — Align training and daily routines with recoverable effort.
+## Routing Model
 
-## How to Use This Domain
+| Need | Start with | Boundary |
+|---|---|---|
+| Program, exercise, volume, intensity or progression | [Fitness Coach](4-Health%20%26%20Sport/Fitness%20Coach/README.md) | General training, not diagnosis or rehabilitation |
+| Energy, protein, meals, workout food or body composition | [Nutrition Coach](4-Health%20%26%20Sport/Nutrition%20Coach/README.md) | General nutrition, not therapeutic diet care |
+| Sleep, fatigue, readiness, stress or busy-week recovery | [Recovery & Lifestyle Coach](4-Health%20%26%20Sport/Recovery%20%26%20Lifestyle%20Coach/README.md) | Non-clinical routines and load changes |
+| Evidence, guidelines, health claims, risks or care timing | [Health Research Assistant](4-Health%20%26%20Sport/Health%20Research%20Assistant/README.md) | Research and escalation, never a doctor persona |
 
-Fitness Coach owns training exposure; Nutrition Coach owns practical food planning; Recovery & Lifestyle Coach checks whether sleep, fatigue, and schedule support the plan. Reconcile their recommendations into one feasible week rather than maximizing each independently.
+## Responsibility Boundaries
 
-Read the selected persona README, then load only the skill needed for the requested output. Resolve conflicting requirements before execution. A recommendation is not authorization to send messages, spend money, alter production systems, or make commitments. Return the evidence, decision, uncertainty, and next action rather than merely naming a framework.
+- Fitness owns training exposure; Recovery owns whether life/sleep/fatigue context supports it.
+- Nutrition owns general food and hydration; Fitness supplies training demand but does not prescribe diets.
+- Health Research Assistant verifies evidence and frames uncertainty; coaches decide only general domain actions from that evidence.
+- Red Flag Identification recognizes potential urgency; Care Escalation recommends level/timing; clinicians diagnose and treat.
+- Personal Planner integrates the whole personal calendar. Recovery & Lifestyle states the recovery consequences and minimum viable health plan.
+
+## Current Information Rules
+
+Medical guidelines, contraindications, food-safety guidance, supplement/product evidence, population-specific exercise/nutrition guidance and local care pathways can change. Verify current reputable sources when material. Prefer current authoritative guidelines and primary/systematic evidence, preserve version/date and never hardcode a volatile medical claim as permanent advice.
+
+## Evidence and Uncertainty
+
+Separate user report, observation/measurement, current external evidence, evidence-based inference and unknowns. Population averages do not promise individual outcomes. Consumer devices and equations may support trends but do not create diagnoses or laboratory-grade certainty.
 
 ## Cross-Domain Dependencies
 
-- [Personal](https://github.com/amirhossein-danesh1234/AI-Skils/tree/personal) — Budget, schedule, preferences, and habit systems.
-- [Core](https://github.com/amirhossein-danesh1234/AI-Skils/tree/core) — Source evaluation and reasoning; neither substitutes for clinical judgment.
-- [Leisure](https://github.com/amirhossein-danesh1234/AI-Skils/tree/leisure) — Activity preferences and enjoyable movement.
+- [Personal](https://github.com/amirhossein-danesh1234/AI-Skils/tree/personal) — priorities, money, calendar and systems.
+- [University](https://github.com/amirhossein-danesh1234/AI-Skils/tree/university) — scientific research and learning methods.
+- [Core](https://github.com/amirhossein-danesh1234/AI-Skils/tree/core) — general research, reasoning and planning.
+- [Leisure](https://github.com/amirhossein-danesh1234/AI-Skils/tree/leisure) — enjoyable activity and travel context.
 
-## General Principles
-
-- Use individualized context and qualified clinical restrictions; never invent clearance from missing information.
-- Avoid promises about body changes and punitive or extreme exercise or diet recommendations. Respect autonomy and body-image concerns.
-- Concerning new symptoms, persistent deterioration, or suspected injury require appropriate professional assessment; urgent symptoms should prompt timely local medical help.
-- General reference: [WHO physical activity overview](https://www.who.int/news-room/fact-sheets/detail/physical-activity). General population advice does not establish an individual’s medical suitability.
-
-## Library Status and Branch Boundaries
-
-The skills listed in persona READMEs are an inventory of intended capabilities. Their Markdown files are still empty scaffolds and are not executable protocols. Use these READMEs for routing and boundaries; state the missing protocol rather than pretending it was loaded. Do not author those skill bodies as a side effect of another task. Other domains live on separate branches: inspect their branch or use `git show <branch>:<path>` without merging them.
+Domains remain isolated on their branches. Do not merge another domain into Health & Sport.
