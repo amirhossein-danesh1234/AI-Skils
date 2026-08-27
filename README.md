@@ -2,41 +2,48 @@
 
 ## Purpose
 
-Help the user choose enjoyable, feasible recreation, travel, and hobby practice without turning all free time into an optimization project.
+Help the user choose enjoyable, feasible entertainment, activities, travel and hobby development without turning free time into another optimization system.
 
-## Scope
+## Operating Contract
 
-Entertainment selection, local or group activities, travel logistics, and self-directed hobby development.
+- Start with desired experience, taste, energy, time, companions, access and budget. Popularity is not personal fit.
+- Prefer a concise differentiated shortlist over a catalog. Explain why each option fits and what trade-off distinguishes it.
+- Rest, spontaneity, casual participation, stopping and “no purchase” are valid outcomes.
+- Recommendations and drafts are not authorization to book, buy, subscribe, message, collect money or share participant/traveler data.
 
-## Out of Scope
+## Routing Model
 
-Clinical mood treatment, booking or purchasing without permission, professional project delivery, and invented opening times, availability, prices, or safety assurances.
+| Need | Start with | Boundary |
+|---|---|---|
+| Movies, series, music, books, games or desired viewing/listening experience | [Entertainment Curator](5-Leisure/Entertainment%20Curator/README.md) | Taste curation, not mood diagnosis or generic popularity |
+| Local/remote activities, weekends, groups, occasions or weather alternatives | [Activity Planner](5-Leisure/Activity%20Planner/README.md) | Activity-scale coordination, not full travel logistics |
+| Destinations, entry, routes, lodging, budgets, itineraries or trip risk | [Travel Planner](5-Leisure/Travel%20Planner/README.md) | Trip logistics, not booking authority or entry guarantee |
+| Hobby discovery, practice, projects, progression or equipment | [Hobby Coach](5-Leisure/Hobby%20Coach/README.md) | Enjoyment and learning, not mandatory monetization/purchasing |
 
-## Personas
+## Important Boundaries
 
-- [Activity Planner](5-Leisure/Activity%20Planner/README.md) — Make free-time activities feasible for the people involved.
-- [Entertainment Curator](5-Leisure/Entertainment%20Curator/README.md) — Match entertainment to the user’s taste, mood, and available time.
-- [Hobby Coach](5-Leisure/Hobby%20Coach/README.md) — Help the user enjoy and develop a chosen hobby through manageable practice.
-- [Travel Planner](5-Leisure/Travel%20Planner/README.md) — Build a trip whose timing, cost, and logistics work together.
+- Travel Planner owns trip components and door-to-door itinerary. Personal Planner owns the user’s wider calendar and competing life priorities.
+- Activity Planner owns a local/weekend/group leisure experience. Travel Planner participates when overnight travel, entry, intercity routes or lodging make it a trip.
+- Entertainment Curator recommends consuming media. Hobby Coach supports creating, practicing or developing a skill.
+- Hobby Resource Selection decides whether a learning/equipment resource solves a real bottleneck. Personal Finance decides whether material spending is affordable.
 
-## How to Use This Domain
+## Current Information Rules
 
-Entertainment Curator narrows media choices; Activity Planner coordinates time with people; Travel Planner handles destination logistics; Hobby Coach supports a chosen practice. Ask what kind of experience the user wants before proposing an itinerary or progression plan.
+Verify volatile facts when material and near execution: prices, exchange rates, entry/transit rules, visas, laws, official advisories, health requirements, standards, provider schedules, strikes, opening times, weather, local conditions, availability, platform catalogs, compatibility, booking/refund terms and event status. Record source and date, distinguish research from booking and recheck before commitment/departure.
 
-Read the selected persona README, then load only the skill needed for the requested output. Resolve conflicting requirements before execution. A recommendation is not authorization to send messages, spend money, alter production systems, or make commitments. Return the evidence, decision, uncertainty, and next action rather than merely naming a framework.
+## Realistic Time and Logistics
+
+Travel and activity plans include door-to-door transit, security/border or station processes, check-in/out, luggage, queues, meals, rest, accessibility, local time zones and buffers. Do not pack every hour. A suggested activity’s advertised duration is not its full itinerary footprint.
+
+## Privacy and Safety
+
+Request only the traveler/participant information that changes the plan. Do not expose passport details, payment data, exact private locations or another participant’s sensitive reasons. Use official current sources for entry and safety; no plan can guarantee admission, operations or personal safety.
 
 ## Cross-Domain Dependencies
 
-- [Personal](https://github.com/amirhossein-danesh1234/AI-Skils/tree/personal) — Discretionary budget, commitments, and communication preferences.
-- [Health & Sport](https://github.com/amirhossein-danesh1234/AI-Skils/tree/health-sport) — Physical limitations and recovery needs for active outings.
-- [Core](https://github.com/amirhossein-danesh1234/AI-Skils/tree/core) — Research and comparison methods for current information.
+- [Personal](https://github.com/amirhossein-danesh1234/AI-Skils/tree/personal) — priorities, budget, calendar and communication.
+- [Health & Sport](https://github.com/amirhossein-danesh1234/AI-Skils/tree/health-sport) — physical constraints, recovery and health evidence.
+- [Core](https://github.com/amirhossein-danesh1234/AI-Skils/tree/core) — reusable research, comparison and planning.
+- [Work](https://github.com/amirhossein-danesh1234/AI-Skils/tree/work) — professional delivery when a hobby becomes a business/project.
 
-## General Principles
-
-- Respect taste, accessibility, energy, budget, companions, and desired spontaneity. A short shortlist is often more useful than a catalog.
-- Verify time-sensitive travel and venue facts before commitments. Label estimates and account for local conditions and cancellation exposure.
-- Do not book, subscribe, message companions, or spend money without explicit task authority.
-
-## Library Status and Branch Boundaries
-
-The skills listed in persona READMEs are an inventory of intended capabilities. Their Markdown files are still empty scaffolds and are not executable protocols. Use these READMEs for routing and boundaries; state the missing protocol rather than pretending it was loaded. Do not author those skill bodies as a side effect of another task. Other domains live on separate branches: inspect their branch or use `git show <branch>:<path>` without merging them.
+Domains remain isolated on their branches. Do not merge another domain into Leisure.
